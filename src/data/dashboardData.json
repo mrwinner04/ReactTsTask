@@ -1,0 +1,218 @@
+{
+  "sections": [
+    {
+      "id": "solutions",
+      "name": "solutions",
+      "title": "Solutions Title",
+      "subtitle": "Solutions Label",
+      "cards": [
+        {
+          "id": "card_solutions_1",
+          "title": "Title 1",
+          "subtitle": "Card 1",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "Solution",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Learn More",
+          "sectionId": "solutions",
+          "createdAt": "2024-01-15T10:00:00.000Z",
+          "updatedAt": "2024-01-15T10:00:00.000Z"
+        },
+        {
+          "id": "card_solutions_2",
+          "title": "Title 2",
+          "subtitle": "Card 2",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "Solution",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Learn More",
+          "sectionId": "solutions",
+          "createdAt": "2024-01-15T11:00:00.000Z",
+          "updatedAt": "2024-01-15T11:00:00.000Z"
+        },
+        {
+          "id": "card_solutions_3",
+          "title": "Title 3",
+          "subtitle": "Card 3",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "Solution",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Learn More",
+          "sectionId": "solutions",
+          "createdAt": "2024-01-15T12:00:00.000Z",
+          "updatedAt": "2024-01-15T12:00:00.000Z"
+        },
+        {
+          "id": "card_solutions_4",
+          "title": "Title 4",
+          "subtitle": "Card 4",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "Solution",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Learn More",
+          "sectionId": "solutions",
+          "createdAt": "2024-01-15T13:00:00.000Z",
+          "updatedAt": "2024-01-15T13:00:00.000Z"
+        },
+        {
+          "id": "card_solutions_5",
+          "title": "Title 5",
+          "subtitle": "Card 5",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "Solution",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Learn More",
+          "sectionId": "solutions",
+          "createdAt": "2024-01-15T14:00:00.000Z",
+          "updatedAt": "2024-01-15T14:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "featured",
+      "name": "featured",
+      "title": "Featured Title",
+      "subtitle": "Featured Label",
+      "cards": [
+        {
+          "id": "card_featured_1",
+          "title": "Title 2",
+          "subtitle": "Card 1",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "Featured",
+          "imageUrl": "src/assets/fertilizer_list.jpeg",
+          "ctaLabel": "Learn More",
+          "sectionId": "featured",
+          "createdAt": "2024-01-16T10:00:00.000Z",
+          "updatedAt": "2024-01-16T10:00:00.000Z"
+        },
+        {
+          "id": "card_featured_2",
+          "title": "Title 3",
+          "subtitle": "Card 2",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "Featured",
+          "imageUrl": "src/assets/fertilizer_list.jpeg",
+          "ctaLabel": "Read More",
+          "sectionId": "featured",
+          "createdAt": "2024-01-16T11:00:00.000Z",
+          "updatedAt": "2024-01-16T11:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "name": "events",
+      "title": "Events Title",
+      "subtitle": "Other Label",
+      "cards": [
+        {
+          "id": "card_events_1",
+          "title": "Title 2",
+          "subtitle": "Card 1",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "Event",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Learn More",
+          "sectionId": "events",
+          "createdAt": "2024-01-17T10:00:00.000Z",
+          "updatedAt": "2024-01-17T10:00:00.000Z"
+        },
+        {
+          "id": "card_events_2",
+          "title": "Title 3",
+          "subtitle": "Card 2",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "Event",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Join Event",
+          "sectionId": "events",
+          "createdAt": "2024-01-17T11:00:00.000Z",
+          "updatedAt": "2024-01-17T11:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "name": "news",
+      "title": "News Title",
+      "subtitle": "News Label",
+      "cards": [
+        {
+          "id": "card_news_1",
+          "title": "Title 1",
+          "subtitle": "Card 1",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "News",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Read More",
+          "sectionId": "news",
+          "createdAt": "2024-01-18T10:00:00.000Z",
+          "updatedAt": "2024-01-18T10:00:00.000Z"
+        },
+        {
+          "id": "card_news_2",
+          "title": "Title 2",
+          "subtitle": "Card 2",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "News",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Read More",
+          "sectionId": "news",
+          "createdAt": "2024-01-18T11:00:00.000Z",
+          "updatedAt": "2024-01-18T11:00:00.000Z"
+        },
+        {
+          "id": "card_news_3",
+          "title": "Title 3",
+          "subtitle": "Card 3",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "News",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Read More",
+          "sectionId": "news",
+          "createdAt": "2024-01-18T12:00:00.000Z",
+          "updatedAt": "2024-01-18T12:00:00.000Z"
+        },
+        {
+          "id": "card_news_4",
+          "title": "Title 4",
+          "subtitle": "Card 4",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "News",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Read More",
+          "sectionId": "news",
+          "createdAt": "2024-01-18T13:00:00.000Z",
+          "updatedAt": "2024-01-18T13:00:00.000Z"
+        },
+        {
+          "id": "card_news_5",
+          "title": "Title 5",
+          "subtitle": "Card 5",
+          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
+          "type": "News",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Read More",
+          "sectionId": "news",
+          "createdAt": "2024-01-18T14:00:00.000Z",
+          "updatedAt": "2024-01-18T14:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}
