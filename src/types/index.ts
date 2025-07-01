@@ -12,13 +12,35 @@ export interface Card {
   subtitle?: string;
   description?: string;
   content?: string;
-  type?: string;
   imageUrl?: string;
   ctaLabel?: string;
+  ctaUrl?: string;
   sectionId: string;
-  createdAt: string;
-  updatedAt: string;
 }
+
+export interface CardFormData {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  imageUrl?: string;
+  ctaLabel?: string;
+}
+
+/**
+ * Layout for sections and cards
+ */
+export type SectionLayout =
+  | "default" // Standard responsive grid
+  | "stack" // Vertical stack (for horizontal cards)
+  | "full-width" // Cards take full width
+  | "two-column"; // Side-by-side layout
+
+export type CardLayout =
+  | "vertical" // Standard card (image top, content bottom)
+  | "horizontal" // Image left, content right
+  | "compact"; // Smaller version
+
+export type CardSize = "compact" | "default" | "large";
 
 // Section types for organizing cards
 export interface Section {
@@ -27,15 +49,10 @@ export interface Section {
   title: string;
   subtitle?: string;
   cards: Card[];
-}
-
-// Form types for validation
-export interface CardFormData {
-  title: string;
-  subtitle: string;
-  description: string;
-  imageUrl: string;
-  ctaLabel: string;
+  // properties for flexible design
+  layout?: SectionLayout;
+  cardLayout?: CardLayout;
+  cardSize?: CardSize;
 }
 
 // Context types
@@ -63,25 +80,4 @@ export interface ButtonProps {
   size?: "small" | "medium" | "large";
   disabled?: boolean;
   className?: string;
-}
-
-export interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title: string;
-  children: React.ReactNode;
-}
-
-export interface FormFieldProps {
-  label: string;
-  name: string;
-  type?: string;
-  value: string;
-  onChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  error?: string;
-  placeholder?: string;
-  required?: boolean;
-  rows?: number;
 }

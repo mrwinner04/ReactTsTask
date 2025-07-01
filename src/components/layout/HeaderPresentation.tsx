@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css";
+import styled from "styled-components";
 
 interface HeaderPresentationProps {
   onLogout: () => void;
@@ -8,37 +8,81 @@ interface HeaderPresentationProps {
 /**
  * Header Presentation Component
  */
+
+const StyledHeader = styled.header`
+  display: flex;
+  align-items: center;
+  background-color: blue;
+  padding: 10px;
+`;
+
+const StyledLogo = styled.div`
+  background-color: white;
+  width: 100px;
+  height: 20px;
+  align-self: center;
+  margin-left: 10px;
+
+  a {
+    text-decoration: none;
+  }
+`;
+
+const HeaderActions = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  color: white;
+`;
+
+const StyledTextButton = styled.a`
+  height: 30px;
+  margin: 10px;
+  margin-right: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+`;
+
 const HeaderPresentation: React.FC<HeaderPresentationProps> = ({
   onLogout,
 }) => {
   return (
-    <header>
-      <span className="logo">
+    <StyledHeader>
+      <StyledLogo>
         <a href="#" rel="noopener noreferrer">
           YaraLogo
         </a>
-      </span>
-      <div>
-        <select name="options" id="opt">
-          <option selected value="one">
-            One
-          </option>
-          <option value="two">Two</option>
-          <option value="three">Three</option>
-          <option value="four">Four</option>
-        </select>
-
-        <button type="button" className="help-icon">
-          ??
-        </button>
-        <button type="button" className="profile-icon">
-          P
-        </button>
-        <button type="button" className="menu-icon" onClick={onLogout}>
-          M
-        </button>
-      </div>
-    </header>
+      </StyledLogo>
+      <HeaderActions>
+        <StyledTextButton href="#" role="button">
+          Help
+        </StyledTextButton>
+        <StyledTextButton href="#" role="button">
+          Profile
+        </StyledTextButton>
+        <StyledTextButton href="#" role="button" onClick={onLogout}>
+          Log Out
+        </StyledTextButton>
+      </HeaderActions>
+    </StyledHeader>
   );
 };
 

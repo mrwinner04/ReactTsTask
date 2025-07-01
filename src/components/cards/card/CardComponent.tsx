@@ -6,6 +6,7 @@ interface CardComponentProps {
   card: Card;
   onEdit: () => void;
   onDelete: () => void;
+  className?: string;
 }
 
 /**

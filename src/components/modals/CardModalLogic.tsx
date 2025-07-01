@@ -59,18 +59,10 @@ const CardModalLogic: React.FC<CardModalLogicProps> = ({
   };
 
   const validateForm = () => {
-    const newErrors: Record<string, string> = {};
-
-    if (!formData.title.trim()) {
-      newErrors.title = "Title is required";
-    }
-
-    if (!formData.description.trim()) {
-      newErrors.description = "Description is required";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    // All fields are optional now - no validation required
+    // Just clear any existing errors
+    setErrors({});
+    return true;
   };
 
   // form submission
@@ -85,11 +77,11 @@ const CardModalLogic: React.FC<CardModalLogicProps> = ({
 
     try {
       const cardData = {
-        title: formData.title.trim(),
-        subtitle: formData.subtitle.trim(),
-        description: formData.description.trim(),
-        imageUrl: formData.imageUrl.trim(),
-        ctaLabel: formData.ctaLabel.trim(),
+        title: formData.title?.trim() || "",
+        subtitle: formData.subtitle?.trim() || "",
+        description: formData.description?.trim() || "",
+        imageUrl: formData.imageUrl?.trim() || "",
+        ctaLabel: formData.ctaLabel?.trim() || "",
       };
 
       if (isEditing && editCard) {

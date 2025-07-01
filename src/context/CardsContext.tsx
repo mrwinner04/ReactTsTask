@@ -1,7 +1,7 @@
 import React, { createContext, useState, useCallback } from "react";
 import type { ReactNode } from "react";
 import type { Section, Card, CardFormData, CardsContextType } from "../types";
-import dashboardData from "../data/dashboardData.json";
+import CardService from "../components/cards/card/CardService";
 
 const CardsContext = createContext<CardsContextType | undefined>(undefined);
 
@@ -10,80 +10,42 @@ interface CardsProviderProps {
   children: ReactNode;
 }
 
-// Load data from JSON
-const initialSections: Section[] = dashboardData.sections;
-
-/**
- * CardsProvider Component
- */
 export const CardsProvider: React.FC<CardsProviderProps> = ({ children }) => {
-  const [sections, setSections] = useState<Section[]>(initialSections);
+  const [sections, setSections] = useState<Section[]>(
+    CardService.getInitialSectionsJson()
+  );
 
   /**
-   * Add a new card to a specific section
+   * Add
    */
   const addCard = useCallback((sectionId: string, cardData: CardFormData) => {
-    const now = new Date().toISOString();
-    const newCard: Card = {
-      id: `card_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      ...cardData,
-      sectionId,
-      createdAt: now,
-      updatedAt: now,
-    };
-
     setSections((prev) =>
-      prev.map((section) =>
-        section.id === sectionId
-          ? { ...section, cards: [...section.cards, newCard] }
-          : section
-      )
+      CardService.addCardToSection(prev, sectionId, cardData)
     );
   }, []);
 
   /**
-   * Update an existing card
+   * Update
    */
   const updateCard = useCallback((cardId: string, cardData: CardFormData) => {
-    const now = new Date().toISOString();
     setSections((prev) =>
-      prev.map((section) => ({
-        ...section,
-        cards: section.cards.map((card) =>
-          card.id === cardId
-            ? {
-                ...card,
-                ...cardData,
-                updatedAt: now,
-              }
-            : card
-        ),
-      }))
+      CardService.updateCardInSections(prev, cardId, cardData)
     );
   }, []);
 
   /**
-   * Delete a card by ID
+   * Delete
    */
   const deleteCard = useCallback((cardId: string) => {
-    setSections((prev) =>
-      prev.map((section) => ({
-        ...section,
-        cards: section.cards.filter((card) => card.id !== cardId),
-      }))
-    );
+    setSections((prev) => CardService.deleteCardFromSections(prev, cardId));
   }, []);
 
   /**
-   * Get a specific card by ID
+   * Get card by ID
    */
   const getCardById = useCallback(
     (cardId: string): Card | undefined => {
-      for (const section of sections) {
-        const card = section.cards.find((c) => c.id === cardId);
-        if (card) return card;
-      }
-      return undefined;
+      return CardService.findCardById(sections, cardId);
     },
     [sections]
   );

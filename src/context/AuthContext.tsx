@@ -13,10 +13,10 @@ interface AuthProviderProps {
  */
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   /**
-   * Login function with dummy authentication
+   * Login function with authentication
    */
   const login = useCallback(
     async (email: string, password: string): Promise<boolean> => {
@@ -68,6 +68,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     } catch (error) {
       console.error("Error initializing auth:", error);
       localStorage.removeItem("user");
+    } finally {
+      setIsLoading(false);
     }
   }, []);
 

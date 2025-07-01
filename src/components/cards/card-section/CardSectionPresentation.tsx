@@ -1,8 +1,18 @@
 import React from "react";
-import Button from "../../ui/Button";
 import CardComponent from "../card/CardComponent";
 import type { Section, Card } from "../../../types";
-import "./CardSection.css";
+import {
+  BaseSection,
+  SectionHeader,
+  SectionInfo,
+  SectionTitle,
+  SectionSubtitle,
+  SectionDescription,
+  CardGrid,
+  EmptyState,
+  BaseButton,
+} from "../../../styles/DesignSystem";
+import styled from "styled-components";
 
 interface CardSectionPresentationProps {
   section: Section;
@@ -11,9 +21,57 @@ interface CardSectionPresentationProps {
   createDeleteHandler: (cardId: string) => () => void;
 }
 
-/**
- * CardSection Presentation Component
- */
+// Styled components for card-specific elements
+const StyledCreateCardButton = styled(BaseButton)`
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  @media (max-width: 992px) {
+    align-self: center;
+    max-width: 200px;
+  }
+
+  @media print {
+    display: none;
+  }
+`;
+
+const StyledEmptyIcon = styled.div`
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+`;
+
+const StyledEmptyTitle = styled.h3`
+  font-size: 20px;
+  font-weight: 600;
+  color: #495057;
+  margin: 0 0 8px 0;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+`;
+
+const StyledEmptyDescription = styled.p`
+  color: #6c757d;
+  font-size: 14px;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
+`;
+
 const CardSectionPresentation: React.FC<CardSectionPresentationProps> = ({
   section,
   onCreateCard,
@@ -21,63 +79,75 @@ const CardSectionPresentation: React.FC<CardSectionPresentationProps> = ({
   createDeleteHandler,
 }) => {
   const renderEmptyState = () => (
-    <div className="empty-state">
-      <div className="empty-icon">📋</div>
-      <h3 className="empty-title">No cards yet</h3>
-      <p className="empty-description">
+    <EmptyState>
+      <StyledEmptyIcon>📋</StyledEmptyIcon>
+      <StyledEmptyTitle>No cards yet</StyledEmptyTitle>
+      <StyledEmptyDescription>
         Create your first card to get started with this section.
-      </p>
-      <Button
-        variant="outline"
-        size="medium"
-        onClick={onCreateCard}
-        className="empty-create-button"
-      >
+      </StyledEmptyDescription>
+      <BaseButton variant="outline" size="medium" onClick={onCreateCard}>
         Create First Card
-      </Button>
-    </div>
+      </BaseButton>
+    </EmptyState>
   );
+  /**
+   * Get card className based on section configuration
+   */
+  const getCardClassName = () => {
+    const { cardLayout = "vertical" } = section;
 
-  // Render function for cards grid
-  const renderCardsGrid = () => (
-    <div className="cards-grid">
-      {section.cards.map((card) => (
-        <CardComponent
-          key={card.id}
-          card={card}
-          onEdit={createEditHandler(card)}
-          onDelete={createDeleteHandler(card.id)}
-        />
-      ))}
-    </div>
-  );
+    if (cardLayout === "horizontal") {
+      return "card--horizontal max-width-100";
+    }
+
+    return "";
+  };
+
+  /**
+   * Render cards using the
+   */
+  const renderCards = () => {
+    const cards = section.cards.map((card) => (
+      <CardComponent
+        key={card.id}
+        card={card}
+        onEdit={createEditHandler(card)}
+        onDelete={createDeleteHandler(card.id)}
+        className={getCardClassName()}
+      />
+    ));
+
+    return (
+      <CardGrid className={`card-grid card-grid--${section.layout}`}>
+        {cards}
+      </CardGrid>
+    );
+  };
 
   return (
-    <section className="card-section">
-      <div className="section-header">
-        <div className="section-info">
+    <BaseSection className={`section section--${section.name}`}>
+      <SectionHeader>
+        <SectionInfo>
           {section.subtitle && (
-            <h5 className="section-subtitle">{section.subtitle}</h5>
+            <SectionSubtitle>{section.subtitle}</SectionSubtitle>
           )}
-          <h2 className="section-title">{section.title}</h2>
-          <p className="section-description">
+          <SectionTitle>{section.title}</SectionTitle>
+          <SectionDescription>
             Manage your {section.title.toLowerCase()} content
-          </p>
-        </div>
-        <Button
+          </SectionDescription>
+        </SectionInfo>
+        <StyledCreateCardButton
           variant="primary"
+          size="medium"
           onClick={onCreateCard}
-          className="create-card-button"
         >
           + Create Card
-        </Button>
-      </div>
+        </StyledCreateCardButton>
+      </SectionHeader>
 
-      {/* Section Content */}
-      <div className="cards-container">
-        {section.cards.length === 0 ? renderEmptyState() : renderCardsGrid()}
-      </div>
-    </section>
+      {/* Section content - cards or empty state */}
+      {section.cards.length === 0 ? renderEmptyState() : renderCards()}
+    </BaseSection>
   );
 };
 

@@ -5,6 +5,9 @@
       "name": "solutions",
       "title": "Solutions Title",
       "subtitle": "Solutions Label",
+      "layout": "default",
+      "cardLayout": "vertical",
+      "cardSize": "default",
       "cards": [
         {
           "id": "card_solutions_1",
@@ -12,12 +15,9 @@
           "subtitle": "Card 1",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "Solution",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "solutions",
-          "createdAt": "2024-01-15T10:00:00.000Z",
-          "updatedAt": "2024-01-15T10:00:00.000Z"
+          "sectionId": "solutions"
         },
         {
           "id": "card_solutions_2",
@@ -25,12 +25,9 @@
           "subtitle": "Card 2",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "Solution",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "solutions",
-          "createdAt": "2024-01-15T11:00:00.000Z",
-          "updatedAt": "2024-01-15T11:00:00.000Z"
+          "sectionId": "solutions"
         },
         {
           "id": "card_solutions_3",
@@ -38,12 +35,9 @@
           "subtitle": "Card 3",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "Solution",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "solutions",
-          "createdAt": "2024-01-15T12:00:00.000Z",
-          "updatedAt": "2024-01-15T12:00:00.000Z"
+          "sectionId": "solutions"
         },
         {
           "id": "card_solutions_4",
@@ -51,12 +45,9 @@
           "subtitle": "Card 4",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "Solution",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "solutions",
-          "createdAt": "2024-01-15T13:00:00.000Z",
-          "updatedAt": "2024-01-15T13:00:00.000Z"
+          "sectionId": "solutions"
         },
         {
           "id": "card_solutions_5",
@@ -64,12 +55,9 @@
           "subtitle": "Card 5",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "Solution",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "solutions",
-          "createdAt": "2024-01-15T14:00:00.000Z",
-          "updatedAt": "2024-01-15T14:00:00.000Z"
+          "sectionId": "solutions"
         }
       ]
     },
@@ -78,6 +66,9 @@
       "name": "featured",
       "title": "Featured Title",
       "subtitle": "Featured Label",
+      "layout": "default",
+      "cardLayout": "horizontal",
+      "cardSize": "large",
       "cards": [
         {
           "id": "card_featured_1",
@@ -85,12 +76,9 @@
           "subtitle": "Card 1",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "Featured",
           "imageUrl": "src/assets/fertilizer_list.jpeg",
           "ctaLabel": "Learn More",
-          "sectionId": "featured",
-          "createdAt": "2024-01-16T10:00:00.000Z",
-          "updatedAt": "2024-01-16T10:00:00.000Z"
+          "sectionId": "featured"
         },
         {
           "id": "card_featured_2",
@@ -98,12 +86,9 @@
           "subtitle": "Card 2",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "Featured",
           "imageUrl": "src/assets/fertilizer_list.jpeg",
           "ctaLabel": "Read More",
-          "sectionId": "featured",
-          "createdAt": "2024-01-16T11:00:00.000Z",
-          "updatedAt": "2024-01-16T11:00:00.000Z"
+          "sectionId": "featured"
         }
       ]
     },
@@ -111,33 +96,91 @@
       "id": "events",
       "name": "events",
       "title": "Events Title",
-      "subtitle": "Other Label",
+      "subtitle": "Events Label",
+      "layout": "stack",
+      "cardLayout": "horizontal",
+      "cardSize": "default",
       "cards": [
         {
           "id": "card_events_1",
-          "title": "Title 2",
-          "subtitle": "Card 1",
-          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "Event",
+          "title": "Title 1",
+          "subtitle": "Label 1",
+          "description": "Explore optimal fertilizer solutions for improved crop yield",
+          "content": "Explore optimal fertilizer solutions for improved crop yield",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "events",
-          "createdAt": "2024-01-17T10:00:00.000Z",
-          "updatedAt": "2024-01-17T10:00:00.000Z"
+          "sectionId": "events"
         },
         {
           "id": "card_events_2",
-          "title": "Title 3",
-          "subtitle": "Card 2",
-          "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "Event",
+          "title": "Title 2",
+          "subtitle": "Label 2",
+          "description": "Explore optimal fertilizer solutions for improved crop yield",
+          "content": "Explore optimal fertilizer solutions for improved crop yield",
           "imageUrl": "src/assets/soil.jpg",
-          "ctaLabel": "Join Event",
-          "sectionId": "events",
-          "createdAt": "2024-01-17T11:00:00.000Z",
-          "updatedAt": "2024-01-17T11:00:00.000Z"
+          "ctaLabel": "Learn More",
+          "sectionId": "events"
+        },
+        {
+          "id": "card_events_3",
+          "title": "Title 3",
+          "subtitle": "Label 3",
+          "description": "Explore optimal fertilizer solutions for improved crop yield",
+          "content": "Explore optimal fertilizer solutions for improved crop yield",
+          "imageUrl": "src/assets/soil.jpg",
+          "ctaLabel": "Learn More",
+          "sectionId": "events"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "other",
+      "title": "Other Title",
+      "subtitle": "Other Label",
+      "layout": "default",
+      "cardLayout": "vertical",
+      "cardSize": "compact",
+      "cards": [
+        {
+          "id": "card_other_1",
+          "title": "Title 4",
+          "subtitle": "Label 4",
+          "description": "Discover innovative digital tools for farm planning",
+          "content": "Discover innovative digital tools for farm planning",
+          "imageUrl": "",
+          "ctaLabel": "Try Now",
+          "sectionId": "other"
+        },
+        {
+          "id": "card_other_2",
+          "title": "Title 5",
+          "subtitle": "Label 5",
+          "description": "Advanced analytics for sustainable agriculture practices",
+          "content": "Advanced analytics for sustainable agriculture practices",
+          "imageUrl": "",
+          "ctaLabel": "Explore",
+          "sectionId": "other"
+        },
+        {
+          "id": "card_other_3",
+          "title": "Title 6",
+          "subtitle": "Label 6",
+          "description": "Smart irrigation systems for optimal water management",
+          "content": "Smart irrigation systems for optimal water management",
+          "imageUrl": "",
+          "ctaLabel": "Learn More",
+          "sectionId": "other"
+        },
+        {
+          "id": "card_other_4",
+          "title": "asd",
+          "subtitle": "asd",
+          "description": "asd",
+          "content": "asd",
+          "imageUrl": "",
+          "ctaLabel": "asd",
+          "sectionId": "other"
         }
       ]
     },
@@ -146,6 +189,9 @@
       "name": "news",
       "title": "News Title",
       "subtitle": "News Label",
+      "layout": "default",
+      "cardLayout": "vertical",
+      "cardSize": "default",
       "cards": [
         {
           "id": "card_news_1",
@@ -153,12 +199,9 @@
           "subtitle": "Card 1",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "News",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Read More",
-          "sectionId": "news",
-          "createdAt": "2024-01-18T10:00:00.000Z",
-          "updatedAt": "2024-01-18T10:00:00.000Z"
+          "sectionId": "news"
         },
         {
           "id": "card_news_2",
@@ -166,12 +209,9 @@
           "subtitle": "Card 2",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "News",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Read More",
-          "sectionId": "news",
-          "createdAt": "2024-01-18T11:00:00.000Z",
-          "updatedAt": "2024-01-18T11:00:00.000Z"
+          "sectionId": "news"
         },
         {
           "id": "card_news_3",
@@ -179,12 +219,9 @@
           "subtitle": "Card 3",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "News",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Read More",
-          "sectionId": "news",
-          "createdAt": "2024-01-18T12:00:00.000Z",
-          "updatedAt": "2024-01-18T12:00:00.000Z"
+          "sectionId": "news"
         },
         {
           "id": "card_news_4",
@@ -192,12 +229,9 @@
           "subtitle": "Card 4",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "News",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Read More",
-          "sectionId": "news",
-          "createdAt": "2024-01-18T13:00:00.000Z",
-          "updatedAt": "2024-01-18T13:00:00.000Z"
+          "sectionId": "news"
         },
         {
           "id": "card_news_5",
@@ -205,12 +239,9 @@
           "subtitle": "Card 5",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "type": "News",
           "imageUrl": "src/assets/soil.jpg",
           "ctaLabel": "Read More",
-          "sectionId": "news",
-          "createdAt": "2024-01-18T14:00:00.000Z",
-          "updatedAt": "2024-01-18T14:00:00.000Z"
+          "sectionId": "news"
         }
       ]
     }
