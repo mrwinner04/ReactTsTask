@@ -11,7 +11,7 @@ import {
   CardGrid,
   EmptyState,
   BaseButton,
-} from "../../../styles/DesignSystem";
+} from "../../../styles";
 import styled from "styled-components";
 
 interface CardSectionPresentationProps {
@@ -25,15 +25,6 @@ interface CardSectionPresentationProps {
 const StyledCreateCardButton = styled(BaseButton)`
   flex-shrink: 0;
   white-space: nowrap;
-
-  @media (max-width: 992px) {
-    align-self: center;
-    max-width: 200px;
-  }
-
-  @media print {
-    display: none;
-  }
 `;
 
 const StyledEmptyIcon = styled.div`
@@ -85,7 +76,7 @@ const CardSectionPresentation: React.FC<CardSectionPresentationProps> = ({
       <StyledEmptyDescription>
         Create your first card to get started with this section.
       </StyledEmptyDescription>
-      <BaseButton variant="outline" size="medium" onClick={onCreateCard}>
+      <BaseButton $variant="outline" $size="md" onClick={onCreateCard}>
         Create First Card
       </BaseButton>
     </EmptyState>
@@ -95,12 +86,13 @@ const CardSectionPresentation: React.FC<CardSectionPresentationProps> = ({
    */
   const getCardClassName = () => {
     const { cardLayout = "vertical" } = section;
+    const baseClasses = [`section--${section.name}`];
 
     if (cardLayout === "horizontal") {
-      return "card--horizontal max-width-100";
+      baseClasses.push("card--horizontal", "max-width-100");
     }
 
-    return "";
+    return baseClasses.join(" ");
   };
 
   /**
@@ -137,8 +129,8 @@ const CardSectionPresentation: React.FC<CardSectionPresentationProps> = ({
           </SectionDescription>
         </SectionInfo>
         <StyledCreateCardButton
-          variant="primary"
-          size="medium"
+          $variant="primary"
+          $size="md"
           onClick={onCreateCard}
         >
           + Create Card

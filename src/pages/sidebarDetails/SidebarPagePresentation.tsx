@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
   spacing,
   breakpoints,
-} from "../../styles/DesignSystem";
+} from "../../styles";
 
 interface SidebarPagePresentationProps {
   sectionCards: Card[];
@@ -28,7 +28,7 @@ const StyledSectionContainer = styled.div`
 const StyledSectionHeader = styled.div`
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: ${spacing.xl} 0;
+  padding: ${spacing.lg} 0;
   margin-bottom: ${spacing.lg};
 `;
 
@@ -118,7 +118,7 @@ const StyledCardCta = styled.div`
 
 const StyledNoCards = styled.div`
   text-align: center;
-  padding: ${spacing.xl};
+  padding: ${spacing.lg};
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -195,7 +195,7 @@ const SidebarPagePresentation: React.FC<SidebarPagePresentationProps> = ({
 
                 {card.ctaLabel && (
                   <StyledCardCta>
-                    <BaseButton variant="primary" size="small">
+                    <BaseButton $variant="primary" $size="sm">
                       {card.ctaLabel}
                     </BaseButton>
                   </StyledCardCta>
@@ -213,8 +213,8 @@ const SidebarPagePresentation: React.FC<SidebarPagePresentationProps> = ({
         )}
 
         <BaseButton
-          variant="outline"
-          size="medium"
+          $variant="outline"
+          $size="md"
           onClick={handleBackToDashboard}
         >
           ← Back to Dashboard

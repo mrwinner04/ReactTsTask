@@ -77,6 +77,7 @@ export interface ButtonProps {
   type?: "button" | "submit";
   variant?: "primary" | "outline" | "ghost";
   size?: "small" | "medium" | "large";
+  loading?: boolean;
   disabled?: boolean;
   className?: string;
 }

@@ -1,17 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import type { Card } from "../../../types/Types";
+import styled from "styled-components";
 import {
   BaseCard,
-  CardImage,
-  CardContent,
-  CardTitle,
-  CardSubtitle,
-  CardDescription,
-  FlexContainer,
+  BaseCardImage,
+  BaseSpan,
   BaseButton,
-} from "../../../styles/DesignSystem";
-import styled from "styled-components";
+  colors,
+  spacing,
+  breakpoints,
+} from "../../../styles";
 
 interface CardPresentationProps {
   card: Card;
@@ -20,32 +19,88 @@ interface CardPresentationProps {
   className?: string;
 }
 
-/**
- * Card Presentation Component
- */
-
-const StyledCardCta = styled.div`
-  padding: 15px;
+// Card wrapper that handles the overall structure
+const CardWrapper = styled(BaseCard)`
   display: flex;
-  justify-content: flex-end;
-  border-top: 1px solid rgb(225, 222, 222);
+  flex-direction: column;
+  padding: 0;
 `;
 
-const StyledCtaButton = styled(BaseButton)`
-  @media (max-width: 768px) {
-    width: 100%;
-    text-align: center;
+// Top section containing image and content side by side
+const CardTopSection = styled.div<{
+  $layout?: "vertical" | "horizontal";
+}>`
+  display: flex;
+  flex-direction: ${(props) =>
+    props.$layout === "horizontal" ? "row" : "column"};
+  flex: 1;
+
+  @media (max-width: ${breakpoints.md}) {
+    flex-direction: column;
   }
 `;
 
-const StyledActionGroup = styled.div`
+// Content area for text (titles, description)
+const CardTextContent = styled.div`
+  flex: 1;
+  padding: ${spacing.sm};
   display: flex;
-  gap: 4px;
-  align-items: center;
+  flex-direction: column;
+  gap: ${spacing.sm};
+`;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    justify-content: space-around;
+// Clean card title component
+const CardTitle = styled(BaseSpan)`
+  font-size: 18px;
+  font-weight: 700;
+  color: ${colors.text};
+  display: block;
+  margin-bottom: ${spacing.xs};
+
+  @media (max-width: ${breakpoints.md}) {
+    font-size: 16px;
+  }
+`;
+
+// Clean card subtitle component
+const CardSubtitle = styled(BaseSpan)`
+  opacity: 0.8;
+  font-size: 14px;
+  color: ${colors.textMuted};
+  display: block;
+  margin-bottom: ${spacing.sm};
+`;
+
+// Clean card description
+const CardDescription = styled.p`
+  opacity: 0.6;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  color: ${colors.textSubtle};
+  flex: 1;
+`;
+
+// Simple button group
+const ButtonGroup = styled.div`
+  display: flex;
+  gap: ${spacing.xs};
+  align-items: center;
+`;
+
+// Bottom buttons section with full-width separator
+const CardBottomSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: ${spacing.md};
+  border-top: 1px solid ${colors.border};
+  margin-top: auto;
+
+  @media (max-width: ${breakpoints.md}) {
+    flex-direction: column;
+    gap: ${spacing.sm};
+    align-items: stretch;
   }
 `;
 
@@ -58,20 +113,19 @@ const CardPresentation: React.FC<CardPresentationProps> = ({
   const navigate = useNavigate();
 
   const handleCtaClick = () => {
-    // Navigate to card details for all cards
     navigate(`/card/${card.id}`);
   };
 
-  const isHorizontal = className?.includes("card--horizontal");
   const hasImage = card.imageUrl && card.imageUrl.trim() !== "";
 
   // Determine layout based on className
-  let layout: "vertical" | "horizontal" = "vertical";
-  if (className?.includes("card--horizontal")) {
-    layout = "horizontal";
-  }
+  const layout: "vertical" | "horizontal" = className?.includes(
+    "card--horizontal"
+  )
+    ? "horizontal"
+    : "vertical";
 
-  // Determine size based on content or className
+  // Determine size based on content
   const size: "compact" | "default" | "large" = !hasImage
     ? "compact"
     : "default";
@@ -81,64 +135,49 @@ const CardPresentation: React.FC<CardPresentationProps> = ({
     .join(" ");
 
   return (
-    <BaseCard className={cardClasses} layout={layout} size={size}>
-      {isHorizontal ? (
-        // Horizontal layout using design system
-        <FlexContainer className="flex-container" gap="lg">
-          {hasImage && (
-            <CardImage className="card-image">
-              <img src={card.imageUrl} alt={card.title || "Card image"} />
-            </CardImage>
-          )}
-          <CardContent className="card-content">
-            <CardTitle>{card.title}</CardTitle>
-            {card.subtitle && <CardSubtitle>{card.subtitle}</CardSubtitle>}
-            <CardDescription>
-              {card.description || card.content}
-            </CardDescription>
-          </CardContent>
-        </FlexContainer>
-      ) : (
-        // Standard vertical layout
-        <>
-          {hasImage && (
-            <CardImage className="card-image">
-              <img src={card.imageUrl} alt={card.title || "Card image"} />
-            </CardImage>
-          )}
-          <CardContent className="card-content">
-            <CardTitle>{card.title}</CardTitle>
-            {card.subtitle && <CardSubtitle>{card.subtitle}</CardSubtitle>}
-            <CardDescription>
-              {card.description || card.content}
-            </CardDescription>
-          </CardContent>
-        </>
-      )}
-      <StyledCardCta className="card__cta">
-        <StyledCtaButton variant="ghost" size="medium" onClick={handleCtaClick}>
-          {card.ctaLabel || "Button"}
-        </StyledCtaButton>
-        <StyledActionGroup>
+    <CardWrapper className={cardClasses} $layout={layout} $size={size}>
+      {/* Top Section: Image and Content Side by Side */}
+      <CardTopSection $layout={layout}>
+        {/* Card Image */}
+        {hasImage && (
+          <BaseCardImage $layout={layout}>
+            <img src={card.imageUrl} alt={card.title || "Card image"} />
+          </BaseCardImage>
+        )}
+
+        {/* Card Text Content */}
+        <CardTextContent>
+          <CardTitle>{card.title}</CardTitle>
+          {card.subtitle && <CardSubtitle>{card.subtitle}</CardSubtitle>}
+          <CardDescription>{card.description || card.content}</CardDescription>
+        </CardTextContent>
+      </CardTopSection>
+
+      {/* Bottom Section: Buttons with Full-Width Separator */}
+      <CardBottomSection>
+        <BaseButton $variant="ghost" $size="md" onClick={handleCtaClick}>
+          {card.ctaLabel || "Learn More"}
+        </BaseButton>
+        <ButtonGroup>
           <BaseButton
-            variant="ghost"
-            size="small"
+            $variant="ghost"
+            $size="sm"
             onClick={onEdit}
             title="Edit card"
           >
             ✏️
           </BaseButton>
           <BaseButton
-            variant="ghost"
-            size="small"
+            $variant="ghost"
+            $size="sm"
             onClick={onDelete}
             title="Delete card"
           >
             🗑️
           </BaseButton>
-        </StyledActionGroup>
-      </StyledCardCta>
-    </BaseCard>
+        </ButtonGroup>
+      </CardBottomSection>
+    </CardWrapper>
   );
 };
 

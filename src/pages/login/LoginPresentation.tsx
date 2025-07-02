@@ -101,7 +101,6 @@ const LoginPresentation: React.FC<LoginPresentationProps> = ({
 
           <StyledLoginButton
             variant="primary"
-            size="large"
             onClick={onLogin}
             disabled={isLoading}
           >

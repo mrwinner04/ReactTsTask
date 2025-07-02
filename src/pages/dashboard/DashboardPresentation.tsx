@@ -5,10 +5,7 @@ import Hero from "../../components/layout/Hero";
 import CardSection from "../../components/cards/card-section/CardSection";
 import CardModal from "../../components/modals/CardModal";
 import type { Section, Card } from "../../types/Types";
-import {
-  TwoColumnLayout,
-  ResponsiveContainer,
-} from "../../styles/DesignSystem";
+import { TwoColumnLayout, ResponsiveContainer } from "../../styles";
 import styled from "styled-components";
 
 interface DashboardPresentationProps {
@@ -49,9 +46,14 @@ const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: aliceblue;
+  margin-left: 140px; /* Account for fixed sidebar width */
 
-  /* Mobile: account for burger menu button */
+  @media (max-width: 980px) {
+    margin-left: 80px;
+  }
+
   @media (max-width: 768px) {
+    margin-left: 0;
     padding-top: 20px;
   }
 `;
@@ -75,7 +77,7 @@ const DashboardPresentation: React.FC<DashboardPresentationProps> = ({
         <StyledContainer>
           <Hero />
 
-          <ResponsiveContainer maxWidth="content" padding="xl">
+          <ResponsiveContainer $maxWidth="content" $padding="lg">
             {sections.map((section) => {
               if (section.id === "events") {
                 const otherSection = sections.find((s) => s.id === "other");
