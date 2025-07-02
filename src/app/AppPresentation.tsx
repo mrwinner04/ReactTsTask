@@ -10,7 +10,6 @@ interface AppPresentationProps {
  * App Presentation Component
  */
 
-// Minimal global styles - most styling handled by design system
 const GlobalStyle = createGlobalStyle`
   /* Reset and base styles */
   *,

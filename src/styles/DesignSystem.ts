@@ -1,10 +1,10 @@
 import styled, { keyframes } from "styled-components";
 
 /**
- * Simplified Design System - Keep It Simple
+ * Design System
  */
 
-// Core breakpoints (simplified from 8 to 4)
+// Core breakpoints
 export const breakpoints = {
   sm: "680px",
   md: "768px",
@@ -12,7 +12,7 @@ export const breakpoints = {
   xl: "1200px",
 };
 
-// Core spacing (simplified from 8 to 4)
+// Core spacing
 export const spacing = {
   sm: "12px",
   md: "20px",
@@ -20,7 +20,7 @@ export const spacing = {
   xl: "48px",
 };
 
-// Simple animations (only what's used)
+//  animations
 export const animations = {
   fadeIn: keyframes`from { opacity: 0; } to { opacity: 1; }`,
   slideIn: keyframes`
@@ -272,7 +272,7 @@ export const CardDescription = styled.p`
   color: #495057;
 `;
 
-// BUTTONS (only used variants)
+// BUTTONS
 
 export const BaseButton = styled.button<{
   variant?: "primary" | "outline" | "ghost";

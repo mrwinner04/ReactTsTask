@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import CardsContext from "../context/CardsContext";
-import type { CardsContextType } from "../types";
+import type { CardsContextType } from "../types/Types";
 
 export const useCards = (): CardsContextType => {
   const context = useContext(CardsContext);

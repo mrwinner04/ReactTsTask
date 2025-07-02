@@ -1,6 +1,6 @@
 import React from "react";
 import CardModalLogic from "./CardModalLogic";
-import type { Card } from "../../types";
+import type { Card } from "../../types/Types";
 
 interface CardModalProps {
   isOpen: boolean;

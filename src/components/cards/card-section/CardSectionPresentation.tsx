@@ -1,6 +1,6 @@
 import React from "react";
 import CardComponent from "../card/CardComponent";
-import type { Section, Card } from "../../../types";
+import type { Section, Card } from "../../../types/Types";
 import {
   BaseSection,
   SectionHeader,

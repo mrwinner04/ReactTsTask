@@ -15,7 +15,7 @@
           "subtitle": "Card 1",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "solutions"
         },
@@ -25,7 +25,7 @@
           "subtitle": "Card 2",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "solutions"
         },
@@ -35,7 +35,7 @@
           "subtitle": "Card 3",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "solutions"
         },
@@ -45,7 +45,7 @@
           "subtitle": "Card 4",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "solutions"
         },
@@ -55,7 +55,7 @@
           "subtitle": "Card 5",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "solutions"
         }
@@ -76,7 +76,7 @@
           "subtitle": "Card 1",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/fertilizer_list.jpeg",
+          "imageUrl": "/assets/fertilizer_list.jpeg",
           "ctaLabel": "Learn More",
           "sectionId": "featured"
         },
@@ -86,7 +86,7 @@
           "subtitle": "Card 2",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/fertilizer_list.jpeg",
+          "imageUrl": "/assets/fertilizer_list.jpeg",
           "ctaLabel": "Read More",
           "sectionId": "featured"
         }
@@ -107,7 +107,7 @@
           "subtitle": "Label 1",
           "description": "Explore optimal fertilizer solutions for improved crop yield",
           "content": "Explore optimal fertilizer solutions for improved crop yield",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "events"
         },
@@ -117,7 +117,7 @@
           "subtitle": "Label 2",
           "description": "Explore optimal fertilizer solutions for improved crop yield",
           "content": "Explore optimal fertilizer solutions for improved crop yield",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "events"
         },
@@ -127,7 +127,7 @@
           "subtitle": "Label 3",
           "description": "Explore optimal fertilizer solutions for improved crop yield",
           "content": "Explore optimal fertilizer solutions for improved crop yield",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "events"
         }
@@ -199,7 +199,7 @@
           "subtitle": "Card 1",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Read More",
           "sectionId": "news"
         },
@@ -209,7 +209,7 @@
           "subtitle": "Card 2",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Read More",
           "sectionId": "news"
         },
@@ -219,7 +219,7 @@
           "subtitle": "Card 3",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Read More",
           "sectionId": "news"
         },
@@ -229,7 +229,7 @@
           "subtitle": "Card 4",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Read More",
           "sectionId": "news"
         },
@@ -239,7 +239,7 @@
           "subtitle": "Card 5",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "imageUrl": "src/assets/soil.jpg",
+          "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Read More",
           "sectionId": "news"
         }

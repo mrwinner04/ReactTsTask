@@ -6,6 +6,7 @@ import { useAuth } from "../hooks/useAuth";
 import Login from "../pages/login/Login";
 import Dashboard from "../pages/dashboard/Dashboard";
 import CardDetail from "../pages/card-detail/CardDetail";
+import SidebarPage from "../pages/sidebarDetails/SidebarPage";
 import AppPresentation, { LoadingComponent } from "./AppPresentation";
 
 /**
@@ -41,6 +42,14 @@ const AppRoutes: React.FC = () => {
         element={
           <ProtectedRoute>
             <CardDetail />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/sidebar/:section"
+        element={
+          <ProtectedRoute>
+            <SidebarPage />
           </ProtectedRoute>
         }
       />

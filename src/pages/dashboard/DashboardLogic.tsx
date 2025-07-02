@@ -2,7 +2,7 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { useCards } from "../../hooks/useCards";
 import DashboardPresentation from "./DashboardPresentation";
-import type { Card } from "../../types";
+import type { Card } from "../../types/Types";
 
 /**
  * Dashboard Logic Component

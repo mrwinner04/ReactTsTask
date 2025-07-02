@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import type { Card } from "../../../types";
+import type { Card } from "../../../types/Types";
 import {
   BaseCard,
   CardImage,
@@ -58,6 +58,7 @@ const CardPresentation: React.FC<CardPresentationProps> = ({
   const navigate = useNavigate();
 
   const handleCtaClick = () => {
+    // Navigate to card details for all cards
     navigate(`/card/${card.id}`);
   };
 

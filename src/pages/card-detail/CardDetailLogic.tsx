@@ -4,7 +4,7 @@ import { useCards } from "../../hooks/useCards";
 import CardDetailPresentation from "./CardDetailPresentation";
 
 /**
- * Card Detail Logic Component
+ * Card Detail Logic
  */
 const CardDetailLogic: React.FC = () => {
   const { cardId } = useParams<{ cardId: string }>();

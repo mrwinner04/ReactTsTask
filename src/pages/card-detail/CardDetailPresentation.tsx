@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../components/ui/Button";
-import type { Card } from "../../types";
+import type { Card } from "../../types/Types";
 
 interface CardDetailPresentationProps {
   card: Card | undefined;
@@ -10,7 +10,7 @@ interface CardDetailPresentationProps {
 }
 
 /**
- * Card Detail Presentation Component
+ * Card Detail Presentation
  */
 
 const StyledContainer = styled.div`

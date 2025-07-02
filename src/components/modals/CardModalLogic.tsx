@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useCards } from "../../hooks/useCards";
 import CardModalPresentation from "./CardModalPresentation";
-import type { Card } from "../../types";
+import type { Card } from "../../types/Types";
 
 interface CardModalLogicProps {
   isOpen: boolean;
@@ -59,8 +59,6 @@ const CardModalLogic: React.FC<CardModalLogicProps> = ({
   };
 
   const validateForm = () => {
-    // All fields are optional now - no validation required
-    // Just clear any existing errors
     setErrors({});
     return true;
   };

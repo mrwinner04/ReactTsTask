@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../../components/layout/Header";
+import Header from "../../components/layout/header/Header";
 import Sidebar from "../../components/layout/Sidebar";
 import Hero from "../../components/layout/Hero";
 import CardSection from "../../components/cards/card-section/CardSection";
 import CardModal from "../../components/modals/CardModal";
-import type { Section, Card } from "../../types";
+import type { Section, Card } from "../../types/Types";
 import {
   TwoColumnLayout,
   ResponsiveContainer,

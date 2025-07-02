@@ -5,7 +5,7 @@ import type {
   SectionLayout,
   CardLayout,
   CardSize,
-} from "../../../types";
+} from "../../../types/Types";
 import dashboardData from "../../../data/dashboardData.json";
 
 export class CardService {

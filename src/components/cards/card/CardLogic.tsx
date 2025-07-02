@@ -1,6 +1,6 @@
 import React from "react";
 import CardPresentation from "./CardPresentation";
-import type { Card } from "../../../types";
+import type { Card } from "../../../types/Types";
 
 interface CardLogicProps {
   card: Card;

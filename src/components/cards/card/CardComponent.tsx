@@ -1,6 +1,6 @@
 import React from "react";
 import CardLogic from "./CardLogic";
-import type { Card } from "../../../types";
+import type { Card } from "../../../types/Types";
 
 interface CardComponentProps {
   card: Card;

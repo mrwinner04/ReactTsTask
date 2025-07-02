@@ -26,9 +26,6 @@ interface CardModalPresentationProps {
 /**
  * CardModal Presentation Component
  */
-
-// Using animations from design system
-
 const StyledCardModalBackdrop = styled.div`
   position: fixed;
   top: 0;

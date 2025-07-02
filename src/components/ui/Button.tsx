@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css, keyframes } from "styled-components";
-import type { ButtonProps } from "../../types";
+import type { ButtonProps } from "../../types/Types";
 
 // Loading animation keyframes
 const loadingSpin = keyframes`
@@ -90,30 +90,6 @@ const StyledButton = styled.button<{
   /* Variant styles */
   ${({ $variant }) => {
     switch ($variant) {
-      case "secondary":
-        return css`
-          background-color: #6c757d;
-          color: white;
-          box-shadow: 0 2px 4px rgba(108, 117, 125, 0.2);
-
-          &:hover:not(:disabled) {
-            background-color: #545b62;
-            box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
-            transform: translateY(-1px);
-          }
-        `;
-      case "danger":
-        return css`
-          background-color: #dc3545;
-          color: white;
-          box-shadow: 0 2px 4px rgba(220, 53, 69, 0.2);
-
-          &:hover:not(:disabled) {
-            background-color: #c82333;
-            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
-            transform: translateY(-1px);
-          }
-        `;
       case "outline":
         return css`
           background-color: transparent;

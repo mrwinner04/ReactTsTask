@@ -1,11 +1,15 @@
 import React, { createContext, useState, useCallback } from "react";
 import type { ReactNode } from "react";
-import type { Section, Card, CardFormData, CardsContextType } from "../types";
+import type {
+  Section,
+  Card,
+  CardFormData,
+  CardsContextType,
+} from "../types/Types";
 import CardService from "../components/cards/card/CardService";
 
 const CardsContext = createContext<CardsContextType | undefined>(undefined);
 
-// Provider component props
 interface CardsProviderProps {
   children: ReactNode;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { useCards } from "../../../hooks/useCards";
 import CardSectionPresentation from "./CardSectionPresentation";
-import type { Section, Card } from "../../../types";
+import type { Section, Card } from "../../../types/Types";
 
 interface CardSectionLogicProps {
   section: Section;

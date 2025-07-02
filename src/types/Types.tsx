@@ -42,14 +42,13 @@ export type CardLayout =
 
 export type CardSize = "compact" | "default" | "large";
 
-// Section types for organizing cards
 export interface Section {
   id: string;
   name: string;
   title: string;
   subtitle?: string;
   cards: Card[];
-  // properties for flexible design
+  // properties for design
   layout?: SectionLayout;
   cardLayout?: CardLayout;
   cardSize?: CardSize;
@@ -75,8 +74,8 @@ export interface CardsContextType {
 export interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  type?: "button" | "submit" | "reset";
-  variant?: "primary" | "secondary" | "danger" | "outline";
+  type?: "button" | "submit";
+  variant?: "primary" | "outline" | "ghost";
   size?: "small" | "medium" | "large";
   disabled?: boolean;
   className?: string;

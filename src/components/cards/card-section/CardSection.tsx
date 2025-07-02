@@ -1,6 +1,6 @@
 import React from "react";
 import CardSectionLogic from "./CardSectionLogic";
-import type { Section, Card } from "../../../types";
+import type { Section, Card } from "../../../types/Types";
 
 interface CardSectionProps {
   section: Section;

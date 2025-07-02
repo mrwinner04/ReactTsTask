@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
   return (
     <StyledHero>
-      <StyledHeroTitle>Welcome {user?.name || "Martin"}</StyledHeroTitle>
+      <StyledHeroTitle>Welcome {user?.name || "User"}</StyledHeroTitle>
       <StyledHeroDescription>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, qui.
         Eveniet eum, facere ex fugiat deleniti.

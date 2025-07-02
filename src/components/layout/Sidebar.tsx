@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import { breakpoints } from "../../styles/DesignSystem";
 
 const StyledSidebar = styled.aside<{ isOpen: boolean }>`
@@ -200,9 +201,26 @@ const CloseButton = styled.button`
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const closeSidebar = () => setIsOpen(false);
+
+  // Navigation handlers
+  const handleHomeClick = () => {
+    navigate("/dashboard");
+    closeSidebar();
+  };
+
+  const handleEventsClick = () => {
+    navigate("/sidebar/events");
+    closeSidebar();
+  };
+
+  const handleNewsClick = () => {
+    navigate("/sidebar/news");
+    closeSidebar();
+  };
 
   return (
     <>
@@ -216,27 +234,21 @@ const Sidebar: React.FC = () => {
         <SidebarNav>
           <NavList>
             <NavItem>
-              <NavLink onClick={closeSidebar}>
+              <NavLink onClick={handleHomeClick}>
                 <NavIcon>🏠</NavIcon>
                 <NavLabel>Home</NavLabel>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink onClick={closeSidebar}>
+              <NavLink onClick={handleEventsClick}>
                 <NavIcon>📅</NavIcon>
                 <NavLabel>Events</NavLabel>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink onClick={closeSidebar}>
+              <NavLink onClick={handleNewsClick}>
                 <NavIcon>📰</NavIcon>
                 <NavLabel>News</NavLabel>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink onClick={closeSidebar}>
-                <NavIcon>🎧</NavIcon>
-                <NavLabel>Podcasts</NavLabel>
               </NavLink>
             </NavItem>
           </NavList>
