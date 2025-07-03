@@ -14,7 +14,6 @@ export interface Card {
   content?: string;
   imageUrl?: string;
   ctaLabel?: string;
-  ctaUrl?: string;
   sectionId: string;
 }
 
@@ -68,16 +67,4 @@ export interface CardsContextType {
   updateCard: (cardId: string, cardData: CardFormData) => void;
   deleteCard: (cardId: string) => void;
   getCardById: (cardId: string) => Card | undefined;
-}
-
-// Component prop types
-export interface ButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  type?: "button" | "submit";
-  variant?: "primary" | "outline" | "ghost";
-  size?: "small" | "medium" | "large";
-  loading?: boolean;
-  disabled?: boolean;
-  className?: string;
 }

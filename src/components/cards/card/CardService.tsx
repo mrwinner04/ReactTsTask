@@ -36,13 +36,11 @@ export class CardService {
 
   /**
    * Generate card ID following the existing pattern: card_{sectionId}_{incrementalNumber}
-   * Looks at existing cards in the section and increments the highest number
    */
   static generateCardId(
     sectionId: string,
     existingSections: Section[]
   ): string {
-    // Find the target section
     const targetSection = existingSections.find(
       (section) => section.id === sectionId
     );

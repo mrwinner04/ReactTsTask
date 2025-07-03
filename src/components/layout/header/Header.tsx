@@ -1,11 +1,20 @@
 import React from "react";
-import HeaderLogic from "./HeaderLogic";
+import { useAuth } from "../../../hooks/useAuth";
+import HeaderPresentation from "./HeaderPresentation";
 
 /**
- * Header Main Component
+ * Header Component
  */
 const Header: React.FC = () => {
-  return <HeaderLogic />;
+  const { logout } = useAuth();
+
+  const handleLogout = () => {
+    if (window.confirm("Are you sure you want to logout?")) {
+      logout();
+    }
+  };
+
+  return <HeaderPresentation onLogout={handleLogout} />;
 };
 
 export default Header;

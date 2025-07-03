@@ -1,11 +1,29 @@
 import React from "react";
-import CardDetailLogic from "./CardDetailLogic";
+import { useParams, useNavigate } from "react-router-dom";
+import { useCards } from "../../hooks/useCards";
+import CardDetailPresentation from "./CardDetailPresentation";
 
 /**
- * Card Detail Main Component
+ * Card Detail Component
  */
 const CardDetail: React.FC = () => {
-  return <CardDetailLogic />;
+  const { cardId } = useParams<{ cardId: string }>();
+  const navigate = useNavigate();
+  const { getCardById } = useCards();
+
+  const card = cardId ? getCardById(cardId) : undefined;
+
+  const handleBack = () => {
+    navigate("/dashboard");
+  };
+
+  return (
+    <CardDetailPresentation
+      card={card}
+      cardId={cardId || ""}
+      onBack={handleBack}
+    />
+  );
 };
 
 export default CardDetail;

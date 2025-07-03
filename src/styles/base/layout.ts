@@ -3,7 +3,6 @@ import { breakpoints, spacing } from "../tokens";
 
 /**
  * Essential Layout Components
- * Only components actually used in the codebase
  */
 
 // Base section wrapper - used in card sections
@@ -53,7 +52,7 @@ export const ResponsiveContainer = styled.div<{
   }
 `;
 
-// SIDEBAR COMPONENTS - used in Sidebar.tsx
+// SIDEBAR COMPONENTS - used in Sidebar
 
 export const BaseSidebar = styled.aside<{ $isOpen: boolean }>`
   position: fixed;

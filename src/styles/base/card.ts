@@ -15,7 +15,7 @@ import {
 export type CardLayout = "vertical" | "horizontal";
 export type CardSize = "compact" | "default" | "large";
 
-// Base card wrapper - can be extended with specific styling
+// Base card wrapper
 export const BaseCard = styled.article<{
   $layout?: CardLayout;
   $size?: CardSize;
@@ -89,15 +89,4 @@ export const BaseCardImage = styled.figure<{
     width: 100% !important;
     height: 150px !important;
   }
-`;
-
-// Base card content wrapper
-export const BaseCardContent = styled.div<{
-  $padding?: keyof typeof spacing;
-}>`
-  flex: 1;
-  padding: ${(props) => spacing[props.$padding || "sm"]};
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing.sm};
 `;

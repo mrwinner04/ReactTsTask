@@ -3,18 +3,15 @@ import { useCardActions } from "../../../hooks/useCardActions";
 import CardPresentation from "./CardPresentation";
 import type { Card } from "../../../types/Types";
 
-interface CardLogicProps {
+interface CardItemProps {
   card: Card;
   className?: string;
-  // onEdit and onDelete props removed - now using global handlers
 }
 
 /**
- * Card Logic Component
- * Now uses useCardActions hook directly for better reusability
- * Eliminates prop drilling and makes cards self-contained
+ * CardItem Component
  */
-const CardLogic: React.FC<CardLogicProps> = ({ card, className }) => {
+const CardItem: React.FC<CardItemProps> = ({ card, className }) => {
   // Use global card actions hook directly
   const { createEditHandler, createDeleteHandler } = useCardActions();
 
@@ -28,4 +25,4 @@ const CardLogic: React.FC<CardLogicProps> = ({ card, className }) => {
   );
 };
 
-export default CardLogic;
+export default CardItem;

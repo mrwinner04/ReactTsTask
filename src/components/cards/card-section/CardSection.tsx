@@ -1,18 +1,19 @@
 import React from "react";
-import CardSectionLogic from "./CardSectionLogic";
+import CardSectionPresentation from "./CardSectionPresentation";
 import type { Section } from "../../../types/Types";
 
 interface CardSectionProps {
   section: Section;
   onCreateCard: () => void;
-  // onEditCard prop removed - CardSectionLogic now uses global handler
 }
 
 /**
- * CardSection Main Component
+ * CardSection Component
  */
 const CardSection: React.FC<CardSectionProps> = ({ section, onCreateCard }) => {
-  return <CardSectionLogic section={section} onCreateCard={onCreateCard} />;
+  return (
+    <CardSectionPresentation section={section} onCreateCard={onCreateCard} />
+  );
 };
 
 export default CardSection;

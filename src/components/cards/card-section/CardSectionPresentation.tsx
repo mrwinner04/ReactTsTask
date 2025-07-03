@@ -1,5 +1,5 @@
 import React from "react";
-import CardComponent from "../card/CardComponent";
+import CardItem from "../card/Card";
 import type { Section } from "../../../types/Types";
 import {
   BaseSection,
@@ -92,11 +92,11 @@ const CardSectionPresentation: React.FC<CardSectionPresentationProps> = ({
   };
 
   /**
-   * Render cards - now simplified since CardComponent handles edit/delete internally
+   * Render cards
    */
   const renderCards = () => {
     const cards = section.cards.map((card) => (
-      <CardComponent key={card.id} card={card} className={getCardClassName()} />
+      <CardItem key={card.id} card={card} className={getCardClassName()} />
     ));
 
     return (

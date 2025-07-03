@@ -5,10 +5,8 @@ import type { ButtonSize, ButtonVariant } from "../../styles/exportDesign";
 
 /**
  * Extended Button Component
- * Uses BaseButton from modular design system and adds loading state
  */
 
-// Custom styled button that extends BaseButton with loading functionality
 const StyledButton = styled(BaseButton)<{
   $hasIcon?: boolean;
   $loading?: boolean;

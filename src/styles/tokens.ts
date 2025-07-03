@@ -4,13 +4,13 @@ import { keyframes } from "styled-components";
  * Simplified Design Tokens
  */
 
-// Breakpoints - simplified to essential ones
+// Breakpoints
 export const breakpoints = {
   md: "768px",
   lg: "980px",
 } as const;
 
-// Spacing - reduced to commonly used values
+// Spacing
 export const spacing = {
   xs: "8px",
   sm: "12px",
@@ -18,7 +18,7 @@ export const spacing = {
   lg: "32px",
 } as const;
 
-// Color palette - only essential colors
+// Color palette
 export const colors = {
   primary: "#007bff",
   primaryHover: "#0056b3",
@@ -38,7 +38,7 @@ export const animations = {
   `,
 } as const;
 
-// Typography - simplified (removed unused normal weight and tight line height)
+// Typography
 export const typography = {
   sizes: {
     xs: "12px",
@@ -64,7 +64,7 @@ export const borderRadius = {
   lg: "12px",
 } as const;
 
-// Shadows - simplified
+// Shadows
 export const shadows = {
   sm: "0 2px 4px rgba(0, 123, 255, 0.2)",
   md: "0 4px 8px rgba(0, 123, 255, 0.3)",
