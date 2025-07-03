@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { BaseButton, colors } from "../../styles";
-import type { ButtonSize, ButtonVariant } from "../../styles";
+import { BaseButton, colors } from "../../styles/exportDesign";
+import type { ButtonSize, ButtonVariant } from "../../styles/exportDesign";
 
 /**
  * Extended Button Component

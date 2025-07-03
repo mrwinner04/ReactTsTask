@@ -2,7 +2,6 @@ import { keyframes } from "styled-components";
 
 /**
  * Simplified Design Tokens
- * Only includes values actually used in the codebase
  */
 
 // Breakpoints - simplified to essential ones
@@ -39,7 +38,7 @@ export const animations = {
   `,
 } as const;
 
-// Typography - simplified
+// Typography - simplified (removed unused normal weight and tight line height)
 export const typography = {
   sizes: {
     xs: "12px",
@@ -50,12 +49,10 @@ export const typography = {
     xxl: "24px",
   },
   weights: {
-    normal: 400,
     medium: 500,
     semibold: 600,
   },
   lineHeights: {
-    tight: 1.2,
     normal: 1.4,
   },
 } as const;

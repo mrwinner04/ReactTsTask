@@ -35,18 +35,49 @@ export class CardService {
   }
 
   /**
-   * Generate card ID
+   * Generate card ID following the existing pattern: card_{sectionId}_{incrementalNumber}
+   * Looks at existing cards in the section and increments the highest number
    */
-  static generateCardId(): string {
-    return `card_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  static generateCardId(
+    sectionId: string,
+    existingSections: Section[]
+  ): string {
+    // Find the target section
+    const targetSection = existingSections.find(
+      (section) => section.id === sectionId
+    );
+
+    if (!targetSection) {
+      // If section doesn't exist, start with 1
+      return `card_${sectionId}_1`;
+    }
+
+    // Extract numbers from existing card IDs in this section
+    const existingNumbers = targetSection.cards
+      .map((card) => {
+        // Extract number from pattern: card_{sectionId}_{number}
+        const match = card.id.match(new RegExp(`^card_${sectionId}_(\\d+)$`));
+        return match ? parseInt(match[1], 10) : 0;
+      })
+      .filter((num) => !isNaN(num)); // Filter out any invalid numbers
+
+    // Find the highest number and increment by 1
+    const nextNumber =
+      existingNumbers.length > 0 ? Math.max(...existingNumbers) + 1 : 1;
+
+    return `card_${sectionId}_${nextNumber}`;
   }
 
   /**
    * Create a new card object with given data
    */
-  static createCard(sectionId: string, cardData: CardFormData): Card {
+  static createCard(
+    sectionId: string,
+    cardData: CardFormData,
+    existingSections: Section[]
+  ): Card {
     return {
-      id: this.generateCardId(),
+      id: this.generateCardId(sectionId, existingSections),
       title: cardData.title || "Untitled Card",
       subtitle: cardData.subtitle,
       description: cardData.description,
@@ -64,7 +95,7 @@ export class CardService {
     sectionId: string,
     cardData: CardFormData
   ): Section[] {
-    const newCard = this.createCard(sectionId, cardData);
+    const newCard = this.createCard(sectionId, cardData, sections);
 
     return sections.map((section) =>
       section.id === sectionId

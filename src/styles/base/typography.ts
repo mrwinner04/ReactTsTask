@@ -12,7 +12,7 @@ export const BaseSpan = styled.span<{
   $color?: string;
 }>`
   font-size: ${(props) => typography.sizes[props.$size || "md"]};
-  font-weight: ${(props) => typography.weights[props.$weight || "normal"]};
+  font-weight: ${(props) => typography.weights[props.$weight || "medium"]};
   color: ${(props) => props.$color || colors.text};
 `;
 

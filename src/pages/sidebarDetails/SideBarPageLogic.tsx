@@ -1,15 +1,29 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useCards } from "../../hooks/useCards";
+import { useCardActions } from "../../hooks/useCardActions";
 import type { Card } from "../../types/Types";
 import SidebarPagePresentation from "./SidebarPagePresentation";
 
 /**
  * Logic component for generic sidebar page
+ * Now uses enhanced useCardActions for all operations including navigation
  */
 const SidebarPageLogic: React.FC = () => {
   const { section } = useParams<{ section: string }>();
   const { sections } = useCards();
+
+  // Use enhanced card actions hook with navigation utilities
+  const {
+    isModalOpen,
+    editingCard,
+    selectedSectionId,
+    handleEditCard,
+    handleCloseModal,
+    handleDeleteCard,
+    navigateToDashboard,
+    navigateToCard,
+  } = useCardActions();
 
   // Find the section based on URL parameter
   const currentSection = sections.find(
@@ -18,7 +32,7 @@ const SidebarPageLogic: React.FC = () => {
       s.title.toLowerCase().includes(section?.toLowerCase() || "")
   );
 
-  // Get all
+  // Get all cards for this section
   const sectionCards: Card[] = currentSection?.cards || [];
 
   // Create a display title based on the section parameter
@@ -31,6 +45,14 @@ const SidebarPageLogic: React.FC = () => {
       sectionCards={sectionCards}
       sectionTitle={displayTitle}
       sectionName={section || ""}
+      isModalOpen={isModalOpen}
+      editingCard={editingCard}
+      selectedSectionId={selectedSectionId}
+      onEditCard={handleEditCard}
+      onDeleteCard={handleDeleteCard}
+      onCloseModal={handleCloseModal}
+      onNavigateToDashboard={navigateToDashboard}
+      onNavigateToCard={navigateToCard}
     />
   );
 };

@@ -1,5 +1,6 @@
 /**
- * Simplified Design System - Main Export
+ * Design System Exports
+ * Clean exports of all style components
  */
 
 // Export all design system components

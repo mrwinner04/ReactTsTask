@@ -15,7 +15,7 @@ import {
   FormTextarea,
   typography,
   spacing,
-} from "../../styles";
+} from "../../styles/exportDesign";
 
 interface CardModalPresentationProps {
   isOpen: boolean;
@@ -123,7 +123,7 @@ const CardModalPresentation: React.FC<CardModalPresentationProps> = ({
               className={errors.imageUrl ? "error" : ""}
               value={formData.imageUrl}
               onChange={onInputChange}
-              placeholder="Enter image URL (optional) - Default: src/assets/soil.jpg"
+              placeholder="Enter image URL (optional) - Default: /assets/soil.jpg"
             />
             {errors.imageUrl && <ErrorText>{errors.imageUrl}</ErrorText>}
           </FormGroup>

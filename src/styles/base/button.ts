@@ -8,8 +8,7 @@ import {
 } from "../tokens";
 
 /**
- *  Button Component
- *  variants and functionality
+ *  Button Component styles
  */
 
 // Button variants used in the app

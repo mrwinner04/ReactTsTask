@@ -1,6 +1,6 @@
 import React from "react";
 import CardComponent from "../card/CardComponent";
-import type { Section, Card } from "../../../types/Types";
+import type { Section } from "../../../types/Types";
 import {
   BaseSection,
   SectionHeader,
@@ -11,14 +11,12 @@ import {
   CardGrid,
   EmptyState,
   BaseButton,
-} from "../../../styles";
+} from "../../../styles/exportDesign";
 import styled from "styled-components";
 
 interface CardSectionPresentationProps {
   section: Section;
   onCreateCard: () => void;
-  createEditHandler: (card: Card) => () => void;
-  createDeleteHandler: (cardId: string) => () => void;
 }
 
 // Styled components for card-specific elements
@@ -66,8 +64,6 @@ const StyledEmptyDescription = styled.p`
 const CardSectionPresentation: React.FC<CardSectionPresentationProps> = ({
   section,
   onCreateCard,
-  createEditHandler,
-  createDeleteHandler,
 }) => {
   const renderEmptyState = () => (
     <EmptyState>
@@ -96,17 +92,11 @@ const CardSectionPresentation: React.FC<CardSectionPresentationProps> = ({
   };
 
   /**
-   * Render cards using the
+   * Render cards - now simplified since CardComponent handles edit/delete internally
    */
   const renderCards = () => {
     const cards = section.cards.map((card) => (
-      <CardComponent
-        key={card.id}
-        card={card}
-        onEdit={createEditHandler(card)}
-        onDelete={createDeleteHandler(card.id)}
-        className={getCardClassName()}
-      />
+      <CardComponent key={card.id} card={card} className={getCardClassName()} />
     ));
 
     return (

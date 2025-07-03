@@ -27,7 +27,7 @@ const CardModalLogic: React.FC<CardModalLogicProps> = ({
     title: "",
     subtitle: "",
     description: "",
-    imageUrl: "src/assets/soil.jpg",
+    imageUrl: "/assets/soil.jpg",
     ctaLabel: "",
   });
 
@@ -40,7 +40,7 @@ const CardModalLogic: React.FC<CardModalLogicProps> = ({
         title: editCard?.title || "",
         subtitle: editCard?.subtitle || "",
         description: editCard?.description || editCard?.content || "",
-        imageUrl: editCard?.imageUrl || "src/assets/soil.jpg",
+        imageUrl: editCard?.imageUrl || "/assets/soil.jpg",
         ctaLabel: editCard?.ctaLabel || "",
       });
       setErrors({});
@@ -102,7 +102,7 @@ const CardModalLogic: React.FC<CardModalLogicProps> = ({
       title: "",
       subtitle: "",
       description: "",
-      imageUrl: "src/assets/soil.jpg",
+      imageUrl: "/assets/soil.jpg",
       ctaLabel: "",
     });
     setErrors({});

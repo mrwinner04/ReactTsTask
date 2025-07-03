@@ -5,7 +5,10 @@ import Hero from "../../components/layout/Hero";
 import CardSection from "../../components/cards/card-section/CardSection";
 import CardModal from "../../components/modals/CardModal";
 import type { Section, Card } from "../../types/Types";
-import { TwoColumnLayout, ResponsiveContainer } from "../../styles";
+import {
+  TwoColumnLayout,
+  ResponsiveContainer,
+} from "../../styles/exportDesign";
 import styled from "styled-components";
 
 interface DashboardPresentationProps {
@@ -14,7 +17,6 @@ interface DashboardPresentationProps {
   editingCard: Card | null;
   selectedSectionId: string;
   onCreateCard: (sectionId: string) => void;
-  onEditCard: (card: Card) => void;
   onCloseModal: () => void;
 }
 
@@ -64,7 +66,6 @@ const DashboardPresentation: React.FC<DashboardPresentationProps> = ({
   editingCard,
   selectedSectionId,
   onCreateCard,
-  onEditCard,
   onCloseModal,
 }) => {
   return (
@@ -87,12 +88,10 @@ const DashboardPresentation: React.FC<DashboardPresentationProps> = ({
                       <CardSection
                         section={section}
                         onCreateCard={() => onCreateCard(section.id)}
-                        onEditCard={onEditCard}
                       />
                       <CardSection
                         section={otherSection}
                         onCreateCard={() => onCreateCard(otherSection.id)}
-                        onEditCard={onEditCard}
                       />
                     </TwoColumnLayout>
                   );
@@ -109,7 +108,6 @@ const DashboardPresentation: React.FC<DashboardPresentationProps> = ({
                   key={section.id}
                   section={section}
                   onCreateCard={() => onCreateCard(section.id)}
-                  onEditCard={onEditCard}
                 />
               );
             })}

@@ -1,18 +1,26 @@
 import React from "react";
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 import type { Card } from "../../types/Types";
+import CardModal from "../../components/modals/CardModal";
+import styled from "styled-components";
 import {
   BaseButton,
   ResponsiveContainer,
   spacing,
   breakpoints,
-} from "../../styles";
+} from "../../styles/exportDesign";
 
 interface SidebarPagePresentationProps {
   sectionCards: Card[];
   sectionTitle: string;
   sectionName: string;
+  isModalOpen: boolean;
+  editingCard: Card | null;
+  selectedSectionId: string;
+  onEditCard: (card: Card) => void;
+  onDeleteCard: (cardId: string, cardTitle?: string) => void;
+  onCloseModal: () => void;
+  onNavigateToDashboard: () => void;
+  onNavigateToCard: (cardId: string) => void;
 }
 
 /**
@@ -21,7 +29,7 @@ interface SidebarPagePresentationProps {
 
 const StyledSectionContainer = styled.div`
   min-height: 100vh;
-  background-color: aliceblue;
+  background: #f8f9fa;
   padding: ${spacing.lg} 0;
 `;
 
@@ -114,6 +122,9 @@ const StyledCardDescription = styled.p`
 
 const StyledCardCta = styled.div`
   margin-top: auto;
+  display: flex;
+  gap: ${spacing.xs};
+  align-items: center;
 `;
 
 const StyledNoCards = styled.div`
@@ -135,19 +146,41 @@ const StyledNoCards = styled.div`
   }
 `;
 
+const StyledCardHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ${spacing.md};
+`;
+
+const StyledCardBody = styled.div`
+  margin-bottom: ${spacing.md};
+`;
+
+const StyledCardSubtitle = styled.p`
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+`;
+
 const SidebarPagePresentation: React.FC<SidebarPagePresentationProps> = ({
   sectionCards,
   sectionTitle,
   sectionName,
+  isModalOpen,
+  editingCard,
+  selectedSectionId,
+  onEditCard,
+  onDeleteCard,
+  onCloseModal,
+  onNavigateToDashboard,
+  onNavigateToCard,
 }) => {
-  const navigate = useNavigate();
-
   const handleBackToDashboard = () => {
-    navigate("/dashboard");
+    onNavigateToDashboard();
   };
 
   const handleCardClick = (cardId: string) => {
-    navigate(`/card/${cardId}`);
+    onNavigateToCard(cardId);
   };
 
   return (
@@ -170,36 +203,54 @@ const SidebarPagePresentation: React.FC<SidebarPagePresentationProps> = ({
                 onClick={() => handleCardClick(card.id)}
               >
                 {card.imageUrl && (
-                  <StyledCardImage src={card.imageUrl} alt={card.title} />
+                  <StyledCardImage
+                    src={card.imageUrl}
+                    alt={card.title || "Card image"}
+                  />
                 )}
 
-                <StyledCardTitle>{card.title}</StyledCardTitle>
+                <StyledCardHeader>
+                  <StyledCardTitle>{card.title}</StyledCardTitle>
+                  {card.subtitle && (
+                    <StyledCardSubtitle>{card.subtitle}</StyledCardSubtitle>
+                  )}
+                </StyledCardHeader>
 
-                {card.subtitle && (
-                  <p
-                    style={{
-                      fontSize: "14px",
-                      color: "#888",
-                      margin: `0 0 ${spacing.sm} 0`,
-                    }}
-                  >
-                    {card.subtitle}
-                  </p>
-                )}
+                <StyledCardBody>
+                  <StyledCardDescription>
+                    {card.description || card.content}
+                  </StyledCardDescription>
+                </StyledCardBody>
 
-                <StyledCardDescription>
-                  {card.description ||
-                    card.content ||
-                    "No description available."}
-                </StyledCardDescription>
-
-                {card.ctaLabel && (
-                  <StyledCardCta>
+                <StyledCardCta>
+                  {card.ctaLabel && (
                     <BaseButton $variant="primary" $size="sm">
                       {card.ctaLabel}
                     </BaseButton>
-                  </StyledCardCta>
-                )}
+                  )}
+                  <BaseButton
+                    $variant="ghost"
+                    $size="sm"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onEditCard(card);
+                    }}
+                    title="Edit card"
+                  >
+                    ✏️
+                  </BaseButton>
+                  <BaseButton
+                    $variant="ghost"
+                    $size="sm"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onDeleteCard(card.id, card.title);
+                    }}
+                    title="Delete card"
+                  >
+                    🗑️
+                  </BaseButton>
+                </StyledCardCta>
               </StyledCard>
             ))}
           </StyledCardsGrid>
@@ -220,6 +271,14 @@ const SidebarPagePresentation: React.FC<SidebarPagePresentationProps> = ({
           ← Back to Dashboard
         </BaseButton>
       </ResponsiveContainer>
+
+      {/* Card Editing Modal */}
+      <CardModal
+        isOpen={isModalOpen}
+        onClose={onCloseModal}
+        sectionId={selectedSectionId}
+        editCard={editingCard}
+      />
     </StyledSectionContainer>
   );
 };

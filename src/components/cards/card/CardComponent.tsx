@@ -4,16 +4,16 @@ import type { Card } from "../../../types/Types";
 
 interface CardComponentProps {
   card: Card;
-  onEdit: () => void;
-  onDelete: () => void;
   className?: string;
+  // onEdit and onDelete props removed - handled internally by CardLogic
 }
 
 /**
  * Card Main Component
+ * Simplified - edit/delete actions now handled internally via useCardActions
  */
-const CardComponent: React.FC<CardComponentProps> = (props) => {
-  return <CardLogic {...props} />;
+const CardComponent: React.FC<CardComponentProps> = ({ card, className }) => {
+  return <CardLogic card={card} className={className} />;
 };
 
 export default CardComponent;

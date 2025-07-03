@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useCardActions } from "../../../hooks/useCardActions";
 import type { Card } from "../../../types/Types";
 import styled from "styled-components";
 import {
@@ -10,7 +10,7 @@ import {
   colors,
   spacing,
   breakpoints,
-} from "../../../styles";
+} from "../../../styles/exportDesign";
 
 interface CardPresentationProps {
   card: Card;
@@ -110,10 +110,11 @@ const CardPresentation: React.FC<CardPresentationProps> = ({
   onDelete,
   className,
 }) => {
-  const navigate = useNavigate();
+  // Use navigation utilities from useCardActions hook
+  const { navigateToCard } = useCardActions();
 
   const handleCtaClick = () => {
-    navigate(`/card/${card.id}`);
+    navigateToCard(card.id);
   };
 
   const hasImage = card.imageUrl && card.imageUrl.trim() !== "";

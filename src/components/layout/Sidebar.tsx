@@ -11,7 +11,7 @@ import {
   NavIcon,
   NavLabel,
   CloseButton,
-} from "../../styles";
+} from "../../styles/exportDesign";
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
