@@ -16,7 +16,7 @@ export const BaseSpan = styled.span<{
   color: ${(props) => props.$color || colors.text};
 `;
 
-// Section title component - used in card sections
+// Section title component - card sections
 export const SectionTitle = styled.h2`
   margin: 0 0 ${spacing.sm} 0;
   font-size: ${typography.sizes.xxl};
@@ -28,7 +28,7 @@ export const SectionTitle = styled.h2`
   }
 `;
 
-// Section subtitle component - used in card sections
+// Section subtitle component - card sections
 export const SectionSubtitle = styled.h5`
   margin: 0 0 ${spacing.sm} 0;
   opacity: 0.5;
@@ -39,7 +39,7 @@ export const SectionSubtitle = styled.h5`
   color: ${colors.textMuted};
 `;
 
-// Section description component - used in card sections
+// Section description component - card sections
 export const SectionDescription = styled.p`
   color: ${colors.textMuted};
   font-size: ${typography.sizes.md};

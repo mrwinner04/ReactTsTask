@@ -14,7 +14,7 @@ const Login: React.FC = () => {
     return <Navigate to="/dashboard" replace />;
   }
 
-  // Handle demo login with credentials
+  // Handle login with credentials
   const handleLogin = async () => {
     const success = await login("demo@example.com", "password123");
 
@@ -23,7 +23,7 @@ const Login: React.FC = () => {
     }
   };
 
-  // Pass data and handlers to presentation component
+  // Pass data and handlers to presentation
   return <LoginPresentation isLoading={isLoading} onLogin={handleLogin} />;
 };
 

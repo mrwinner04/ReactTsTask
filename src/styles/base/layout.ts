@@ -27,7 +27,7 @@ export const TwoColumnLayout = styled.div`
   }
 `;
 
-// Empty state wrapper - used in card sections
+// Empty state wrapper - card sections
 export const EmptyState = styled.div`
   text-align: center;
   padding: ${spacing.lg} ${spacing.md};

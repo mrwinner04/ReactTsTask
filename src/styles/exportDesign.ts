@@ -10,5 +10,5 @@ export * from "./base/button";
 export * from "./base/card";
 export * from "./base/modal";
 
-//  tokens for easy access
+//  tokens for access
 export { breakpoints, spacing, colors, typography } from "./tokens";

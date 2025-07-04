@@ -9,7 +9,7 @@ import DashboardPresentation from "./DashboardPresentation";
 const Dashboard: React.FC = () => {
   const { sections } = useCards();
 
-  // Use comprehensive card actions hook
+  // Use card actions
   const {
     isModalOpen,
     editingCard,

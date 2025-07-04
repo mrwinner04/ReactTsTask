@@ -16,7 +16,7 @@ import {
 export type ButtonSize = "sm" | "md" | "lg";
 export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 
-// base button with only essential features
+// base button
 export const BaseButton = styled.button<{
   $variant?: ButtonVariant;
   $size?: ButtonSize;

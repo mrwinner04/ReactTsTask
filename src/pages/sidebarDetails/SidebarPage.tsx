@@ -12,7 +12,7 @@ const SidebarPage: React.FC = () => {
   const { section } = useParams<{ section: string }>();
   const { sections } = useCards();
 
-  // Use enhanced card actions hook with navigation utilities
+  // Use card actions hook with navigation
   const {
     isModalOpen,
     editingCard,
@@ -24,17 +24,15 @@ const SidebarPage: React.FC = () => {
     navigateToCard,
   } = useCardActions();
 
-  // Find the section based on URL parameter
+  // Find section based on URL parameter
   const currentSection = sections.find(
     (s) =>
       s.name.toLowerCase() === section?.toLowerCase() ||
       s.title.toLowerCase().includes(section?.toLowerCase() || "")
   );
 
-  // Get all cards for this section
   const sectionCards: Card[] = currentSection?.cards || [];
 
-  // Create a display title based on the section parameter
   const displayTitle = section
     ? section.charAt(0).toUpperCase() + section.slice(1)
     : currentSection?.title || "Section";

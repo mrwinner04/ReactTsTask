@@ -56,7 +56,7 @@ export class CardService {
         const match = card.id.match(new RegExp(`^card_${sectionId}_(\\d+)$`));
         return match ? parseInt(match[1], 10) : 0;
       })
-      .filter((num) => !isNaN(num)); // Filter out any invalid numbers
+      .filter((num) => !isNaN(num));
 
     // Find the highest number and increment by 1
     const nextNumber =

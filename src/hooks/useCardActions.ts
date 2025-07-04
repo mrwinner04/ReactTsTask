@@ -24,7 +24,6 @@ export const useCardActions = () => {
   // Get editing card if in edit mode
   const editingCard = isEditing && cardId ? getCardById(cardId) || null : null;
 
-  // Get selected section ID for modal
   const selectedSectionId = isCreating
     ? sectionId!
     : editingCard?.sectionId || "";
@@ -39,7 +38,7 @@ export const useCardActions = () => {
   };
 
   /**
-   * Open modal for editing an existing card
+   * Open modal for editing
    */
   const handleEditCard = (card: Card) => {
     setSearchParams({ action: "edit", card: card.id });
@@ -70,14 +69,14 @@ export const useCardActions = () => {
   };
 
   /**
-   * Create a delete handler function for a specific card ID
+   * Create a delete handler
    */
   const createDeleteHandler = (cardId: string, cardTitle?: string) => () => {
     handleDeleteCard(cardId, cardTitle);
   };
 
   /**
-   * Create an edit handler function for a specific card
+   * Create an edit handler
    */
   const createEditHandler = (card: Card) => () => {
     handleEditCard(card);
@@ -87,16 +86,10 @@ export const useCardActions = () => {
    * NAVIGATION UTILITIES
    */
 
-  /**
-   * Navigate to card detail page
-   */
   const navigateToCard = (cardId: string) => {
     navigate(`/card/${cardId}`);
   };
 
-  /**
-   * Navigate back to dashboard
-   */
   const navigateToDashboard = () => {
     navigate("/dashboard");
   };
