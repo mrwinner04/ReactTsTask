@@ -10,12 +10,13 @@ export const breakpoints = {
   lg: "980px",
 } as const;
 
-// Spacing
+// Spacing - Complete pixel-based spacing system
 export const spacing = {
   xs: "8px",
   sm: "12px",
   md: "20px",
   lg: "32px",
+  xl: "40px",
 } as const;
 
 // Color palette

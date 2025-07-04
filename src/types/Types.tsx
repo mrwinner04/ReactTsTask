@@ -11,7 +11,6 @@ export interface Card {
   title: string;
   subtitle?: string;
   description?: string;
-  content?: string;
   imageUrl?: string;
   ctaLabel?: string;
   sectionId: string;

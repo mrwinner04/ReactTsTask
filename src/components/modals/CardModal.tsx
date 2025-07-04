@@ -39,7 +39,7 @@ const CardModal: React.FC<CardModalProps> = ({
       setFormData({
         title: editCard?.title || "",
         subtitle: editCard?.subtitle || "",
-        description: editCard?.description || editCard?.content || "",
+        description: editCard?.description || "",
         imageUrl: editCard?.imageUrl || "/assets/soil.jpg",
         ctaLabel: editCard?.ctaLabel || "",
       });

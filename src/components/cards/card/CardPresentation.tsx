@@ -150,7 +150,7 @@ const CardPresentation: React.FC<CardPresentationProps> = ({
         <CardTextContent>
           <CardTitle>{card.title}</CardTitle>
           {card.subtitle && <CardSubtitle>{card.subtitle}</CardSubtitle>}
-          <CardDescription>{card.description || card.content}</CardDescription>
+          <CardDescription>{card.description}</CardDescription>
         </CardTextContent>
       </CardTopSection>
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
+import { spacing } from "../styles/tokens";
 
 interface AppPresentationProps {
   children: React.ReactNode;
@@ -49,7 +50,7 @@ const StyledLoadingContainer = styled.div`
 `;
 
 const StyledLoadingSpinner = styled.div`
-  padding: 20px;
+  padding: ${spacing.md};
   font-size: 18px;
   color: #333;
   text-align: center;
@@ -59,7 +60,7 @@ const StyledLoadingSpinner = styled.div`
     display: block;
     width: 20px;
     height: 20px;
-    margin: 10px auto 0;
+    margin: ${spacing.xs} auto 0;
     border: 2px solid #f3f3f3;
     border-top: 2px solid #333;
     border-radius: 50%;

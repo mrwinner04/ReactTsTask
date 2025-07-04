@@ -12,7 +12,6 @@ interface CardItemProps {
  * CardItem Component
  */
 const CardItem: React.FC<CardItemProps> = ({ card, className }) => {
-  // Use global card actions hook directly
   const { createEditHandler, createDeleteHandler } = useCardActions();
 
   return (

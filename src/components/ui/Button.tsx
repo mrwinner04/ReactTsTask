@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { BaseButton, colors } from "../../styles/exportDesign";
+import { BaseButton, colors, spacing } from "../../styles/exportDesign";
 import type { ButtonSize, ButtonVariant } from "../../styles/exportDesign";
 
 /**
@@ -11,11 +11,11 @@ const StyledButton = styled(BaseButton)<{
   $hasIcon?: boolean;
   $loading?: boolean;
 }>`
-  /* Custom overrides for this specific button implementation */
+  /* Custom overrides */
   ${(props) =>
     props.$hasIcon &&
     `
-    gap: 8px; /* Add gap between icon and text */
+    gap: ${spacing.xs};
   `}
 
   /* Custom loading state - handle entirely in this component */

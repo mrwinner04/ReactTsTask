@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../components/ui/Button";
 import styled from "styled-components";
+import { spacing } from "../../styles/tokens";
 
 interface LoginPresentationProps {
   isLoading: boolean;
@@ -17,20 +18,20 @@ const StyledLoginPage = styled.div`
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  padding: ${spacing.md};
 `;
 
 const StyledLoginContainer = styled.div`
   background: white;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  padding: 40px;
+  padding: ${spacing.xl};
   width: 100%;
   max-width: 400px;
 
   @media (max-width: 480px) {
     padding: 24px;
-    margin: 20px;
+    margin: ${spacing.md};
   }
 
   /* High contrast mode support */
@@ -41,14 +42,14 @@ const StyledLoginContainer = styled.div`
 
 const StyledLoginHeader = styled.div`
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: ${spacing.xl};
 `;
 
 const StyledLoginTitle = styled.h1`
   color: #333;
   font-size: 28px;
   font-weight: 700;
-  margin: 0 0 8px 0;
+  margin: 0 0 ${spacing.xs} 0;
 
   @media (max-width: 480px) {
     font-size: 24px;

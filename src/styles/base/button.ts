@@ -5,6 +5,7 @@ import {
   borderRadius,
   shadows,
   breakpoints,
+  spacing,
 } from "../tokens";
 
 /**
@@ -52,19 +53,19 @@ export const BaseButton = styled.button<{
     switch (props.$size) {
       case "sm":
         return `
-          padding: 6px 12px;
+          padding: 6px ${spacing.sm};
           font-size: ${typography.sizes.xs};
           min-height: 32px;
         `;
       case "lg":
         return `
-          padding: 12px 24px;
+          padding: ${spacing.sm} 24px;
           font-size: ${typography.sizes.md};
           min-height: 48px;
         `;
       default: // md
         return `
-          padding: 8px 16px;
+          padding: ${spacing.xs} 16px;
           font-size: ${typography.sizes.sm};
           min-height: 40px;
         `;

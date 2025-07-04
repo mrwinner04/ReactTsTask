@@ -218,7 +218,7 @@ const SidebarPagePresentation: React.FC<SidebarPagePresentationProps> = ({
 
                 <StyledCardBody>
                   <StyledCardDescription>
-                    {card.description || card.content}
+                    {card.description}
                   </StyledCardDescription>
                 </StyledCardBody>
 

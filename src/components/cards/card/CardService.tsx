@@ -26,7 +26,6 @@ export class CardService {
         title: card.title,
         subtitle: card.subtitle,
         description: card.description,
-        content: card.content,
         imageUrl: card.imageUrl,
         ctaLabel: card.ctaLabel,
         sectionId: card.sectionId,

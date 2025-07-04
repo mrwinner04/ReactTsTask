@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { spacing } from "../../../styles/tokens";
 
 interface HeaderPresentationProps {
   onLogout: () => void;
@@ -13,7 +14,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   background-color: blue;
-  padding: 10px;
+  padding: ${spacing.xs};
 `;
 
 const StyledLogo = styled.div`
@@ -21,7 +22,7 @@ const StyledLogo = styled.div`
   width: 100px;
   height: 20px;
   align-self: center;
-  margin-left: 10px;
+  margin-left: ${spacing.xs};
 
   a {
     text-decoration: none;
@@ -37,8 +38,8 @@ const HeaderActions = styled.div`
 
 const StyledTextButton = styled.a`
   height: 30px;
-  margin: 10px;
-  margin-right: 20px;
+  margin: ${spacing.xs};
+  margin-right: ${spacing.md};
   text-align: center;
   cursor: pointer;
   border: none;
@@ -46,7 +47,7 @@ const StyledTextButton = styled.a`
   text-decoration: none;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 ${spacing.xs};
   background-color: transparent;
   font-size: 16px;
   font-weight: 600;

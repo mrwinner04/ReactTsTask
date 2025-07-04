@@ -62,7 +62,7 @@ export const BaseSidebar = styled.aside<{ $isOpen: boolean }>`
   width: 140px;
   background-color: #f8f9fa;
   border-right: 1px solid #e9ecef;
-  padding: 20px;
+  padding: ${spacing.md};
   overflow-y: auto;
   z-index: 100;
   transition: transform 0.3s ease;
@@ -70,7 +70,7 @@ export const BaseSidebar = styled.aside<{ $isOpen: boolean }>`
   /* Tablet: collapse to icon-only */
   @media (max-width: ${breakpoints.lg}) {
     width: 80px;
-    padding: 20px 10px;
+    padding: ${spacing.md} ${spacing.xs};
   }
 
   /* Mobile: burger menu overlay */
@@ -81,7 +81,7 @@ export const BaseSidebar = styled.aside<{ $isOpen: boolean }>`
     height: 100vh;
     width: 280px;
     z-index: 1000;
-    padding: 80px 20px 20px;
+    padding: 80px ${spacing.md} ${spacing.md};
     transform: translateX(${(props) => (props.$isOpen ? "0" : "-100%")});
     box-shadow: ${(props) =>
       props.$isOpen ? "2px 0 10px rgba(0,0,0,0.1)" : "none"};
@@ -91,14 +91,14 @@ export const BaseSidebar = styled.aside<{ $isOpen: boolean }>`
 export const MobileMenuButton = styled.button`
   display: none;
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: ${spacing.md};
+  left: ${spacing.md};
   z-index: 1001;
   background: #007bff;
   color: white;
   border: none;
   border-radius: 6px;
-  padding: 12px;
+  padding: ${spacing.sm};
   cursor: pointer;
   font-size: 18px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -142,14 +142,14 @@ export const NavList = styled.ul`
 
 export const NavItem = styled.li`
   list-style-type: none;
-  margin: 8px 0;
+  margin: ${spacing.xs} 0;
 `;
 
 export const NavLink = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
+  gap: ${spacing.sm};
+  padding: ${spacing.sm} 16px;
   color: #495057;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -170,13 +170,13 @@ export const NavLink = styled.div`
   /* Tablet: center icons */
   @media (max-width: ${breakpoints.lg}) and (min-width: calc(${breakpoints.md} + 1px)) {
     justify-content: center;
-    padding: 12px 8px;
+    padding: ${spacing.sm} ${spacing.xs};
     gap: 0;
   }
 
   /* Mobile: full width with labels */
   @media (max-width: ${breakpoints.md}) {
-    padding: 16px 20px;
+    padding: 16px ${spacing.md};
     gap: 16px;
   }
 `;
@@ -201,14 +201,14 @@ export const NavLabel = styled.span`
 export const CloseButton = styled.button`
   display: none;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: ${spacing.md};
+  right: ${spacing.md};
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
   color: #495057;
-  padding: 8px;
+  padding: ${spacing.xs};
   border-radius: 4px;
   transition: background-color 0.2s ease;
 

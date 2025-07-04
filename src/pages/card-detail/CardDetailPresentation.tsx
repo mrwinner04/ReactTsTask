@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../components/ui/Button";
+import { spacing } from "../../styles/tokens";
 import type { Card } from "../../types/Types";
 
 interface CardDetailPresentationProps {
@@ -16,7 +17,7 @@ interface CardDetailPresentationProps {
 const StyledContainer = styled.div`
   min-height: 100vh;
   background-color: #f8f9fa;
-  padding: 40px 20px;
+  padding: 40px ${spacing.md};
 `;
 
 const StyledContent = styled.div`
@@ -29,7 +30,7 @@ const StyledContent = styled.div`
 `;
 
 const StyledHeader = styled.div`
-  padding: 40px;
+  padding: ${spacing.xl};
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   text-align: center;
@@ -61,7 +62,7 @@ const StyledImage = styled.div`
 `;
 
 const StyledBody = styled.div`
-  padding: 40px;
+  padding: ${spacing.xl};
 `;
 
 const StyledDescription = styled.div`
@@ -74,9 +75,9 @@ const StyledDescription = styled.div`
 const StyledMeta = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  gap: ${spacing.md};
   margin-bottom: 30px;
-  padding: 20px;
+  padding: ${spacing.md};
   background-color: #f8f9fa;
   border-radius: 8px;
 `;
@@ -111,11 +112,11 @@ const StyledActions = styled.div`
 
 const StyledNotFound = styled.div`
   text-align: center;
-  padding: 60px 20px;
+  padding: 60px ${spacing.md};
 
   h1 {
     color: #dc3545;
-    margin-bottom: 20px;
+    margin-bottom: ${spacing.md};
   }
 
   p {

@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth } from "../../hooks/useAuth";
 import styled from "styled-components";
+import { spacing } from "../../styles/tokens";
 import BackgroundImage from "../../assets/overviewBackground.jpg";
 
 /**
@@ -9,7 +10,7 @@ import BackgroundImage from "../../assets/overviewBackground.jpg";
 
 const StyledHero = styled.section`
   color: white;
-  padding: 40px;
+  padding: ${spacing.xl};
   min-height: 100px;
   background-color: green;
   background-image: url(${BackgroundImage});
@@ -22,7 +23,7 @@ const StyledHero = styled.section`
 `;
 
 const StyledHeroTitle = styled.h1`
-  margin-bottom: 10px;
+  margin-bottom: ${spacing.xs};
 `;
 
 const StyledHeroDescription = styled.p`

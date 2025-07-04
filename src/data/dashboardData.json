@@ -14,7 +14,6 @@
           "title": "Title 1",
           "subtitle": "Card 1",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "solutions"
@@ -24,7 +23,6 @@
           "title": "Title 2",
           "subtitle": "Card 2",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "solutions"
@@ -34,7 +32,6 @@
           "title": "Title 3",
           "subtitle": "Card 3",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "solutions"
@@ -44,7 +41,6 @@
           "title": "Title 4",
           "subtitle": "Card 4",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "solutions"
@@ -54,7 +50,6 @@
           "title": "Title 5",
           "subtitle": "Card 5",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "solutions"
@@ -75,7 +70,6 @@
           "title": "Title 2",
           "subtitle": "Card 1",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/fertilizer_list.jpeg",
           "ctaLabel": "Learn More",
           "sectionId": "featured"
@@ -85,7 +79,6 @@
           "title": "Title 3",
           "subtitle": "Card 2",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/fertilizer_list.jpeg",
           "ctaLabel": "Read More",
           "sectionId": "featured"
@@ -106,7 +99,6 @@
           "title": "Title 1",
           "subtitle": "Label 1",
           "description": "Explore optimal fertilizer solutions for improved crop yield",
-          "content": "Explore optimal fertilizer solutions for improved crop yield",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "events"
@@ -116,7 +108,6 @@
           "title": "Title 2",
           "subtitle": "Label 2",
           "description": "Explore optimal fertilizer solutions for improved crop yield",
-          "content": "Explore optimal fertilizer solutions for improved crop yield",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "events"
@@ -126,7 +117,6 @@
           "title": "Title 3",
           "subtitle": "Label 3",
           "description": "Explore optimal fertilizer solutions for improved crop yield",
-          "content": "Explore optimal fertilizer solutions for improved crop yield",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
           "sectionId": "events"
@@ -147,7 +137,6 @@
           "title": "Title 4",
           "subtitle": "Label 4",
           "description": "Discover innovative digital tools for farm planning",
-          "content": "Discover innovative digital tools for farm planning",
           "imageUrl": "",
           "ctaLabel": "Try Now",
           "sectionId": "other"
@@ -157,7 +146,6 @@
           "title": "Title 5",
           "subtitle": "Label 5",
           "description": "Advanced analytics for sustainable agriculture practices",
-          "content": "Advanced analytics for sustainable agriculture practices",
           "imageUrl": "",
           "ctaLabel": "Explore",
           "sectionId": "other"
@@ -167,7 +155,6 @@
           "title": "Title 6",
           "subtitle": "Label 6",
           "description": "Smart irrigation systems for optimal water management",
-          "content": "Smart irrigation systems for optimal water management",
           "imageUrl": "",
           "ctaLabel": "Learn More",
           "sectionId": "other"
@@ -177,7 +164,6 @@
           "title": "asd",
           "subtitle": "asd",
           "description": "asd",
-          "content": "asd",
           "imageUrl": "",
           "ctaLabel": "asd",
           "sectionId": "other"
@@ -198,7 +184,6 @@
           "title": "Title 1",
           "subtitle": "Card 1",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Read More",
           "sectionId": "news"
@@ -208,7 +193,6 @@
           "title": "Title 2",
           "subtitle": "Card 2",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Read More",
           "sectionId": "news"
@@ -218,7 +202,6 @@
           "title": "Title 3",
           "subtitle": "Card 3",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Read More",
           "sectionId": "news"
@@ -228,7 +211,6 @@
           "title": "Title 4",
           "subtitle": "Card 4",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Read More",
           "sectionId": "news"
@@ -238,7 +220,6 @@
           "title": "Title 5",
           "subtitle": "Card 5",
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
-          "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Read More",
           "sectionId": "news"
