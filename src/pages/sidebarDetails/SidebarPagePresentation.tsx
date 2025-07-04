@@ -34,7 +34,7 @@ const StyledSectionContainer = styled.div`
 `;
 
 const StyledSectionHeader = styled.div`
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: blue;
   color: white;
   padding: ${spacing.lg} 0;
   margin-bottom: ${spacing.lg};
