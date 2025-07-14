@@ -8,16 +8,10 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
-/**
- * AuthProvider Component
- */
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  /**
-   * Login function with authentication
-   */
   const login = useCallback(
     async (email: string, password: string): Promise<boolean> => {
       setIsLoading(true);
@@ -50,9 +44,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     []
   );
 
-  /**
-   * Logout function
-   */
   const logout = useCallback(() => {
     setUser(null);
     localStorage.removeItem("user");

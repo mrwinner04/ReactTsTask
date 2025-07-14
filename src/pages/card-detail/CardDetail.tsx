@@ -1,28 +1,92 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { useCards } from "../../hooks/useCards";
-import CardDetailPresentation from "./CardDetailPresentation";
+import { useCardDetail } from "./CardDetail.logic";
+import { Button } from "../../components/atoms";
+import {
+  StyledContainer,
+  StyledContent,
+  StyledHeader,
+  StyledTitle,
+  StyledSubtitle,
+  StyledImage,
+  StyledBody,
+  StyledDescription,
+  StyledMeta,
+  StyledMetaItem,
+  StyledActions,
+  StyledNotFound,
+} from "./CardDetail.styles";
 
-/**
- * Card Detail Component
- */
 const CardDetail: React.FC = () => {
-  const { cardId } = useParams<{ cardId: string }>();
-  const navigate = useNavigate();
-  const { getCardById } = useCards();
+  const { card, cardId, handleBack } = useCardDetail();
 
-  const card = cardId ? getCardById(cardId) : undefined;
-
-  const handleBack = () => {
-    navigate("/dashboard");
-  };
+  if (!card) {
+    return (
+      <StyledContainer>
+        <StyledContent>
+          <StyledNotFound>
+            <h1>Card Not Found</h1>
+            <p>The card with ID "{cardId}" doesn't exist.</p>
+            <Button variant="primary" onClick={handleBack}>
+              Back to Dashboard
+            </Button>
+          </StyledNotFound>
+        </StyledContent>
+      </StyledContainer>
+    );
+  }
 
   return (
-    <CardDetailPresentation
-      card={card}
-      cardId={cardId || ""}
-      onBack={handleBack}
-    />
+    <StyledContainer>
+      <StyledContent>
+        <StyledHeader>
+          <StyledTitle>{card.title}</StyledTitle>
+          {card.subtitle && <StyledSubtitle>{card.subtitle}</StyledSubtitle>}
+        </StyledHeader>
+
+        {card.imageUrl && (
+          <StyledImage>
+            <img
+              src={card.imageUrl}
+              alt={card.title}
+              onError={(e) => {
+                e.currentTarget.src = "../src/assets/soil.jpg";
+              }}
+            />
+          </StyledImage>
+        )}
+
+        <StyledBody>
+          {card.description && (
+            <StyledDescription>
+              <p>{card.description}</p>
+            </StyledDescription>
+          )}
+
+          <StyledMeta>
+            <StyledMetaItem>
+              <h4>Card ID</h4>
+              <p>{card.id}</p>
+            </StyledMetaItem>
+            <StyledMetaItem>
+              <h4>Section</h4>
+              <p>{card.sectionId}</p>
+            </StyledMetaItem>
+            {card.ctaLabel && (
+              <StyledMetaItem>
+                <h4>CTA Label</h4>
+                <p>{card.ctaLabel}</p>
+              </StyledMetaItem>
+            )}
+          </StyledMeta>
+
+          <StyledActions>
+            <Button variant="outline" onClick={handleBack}>
+              Back to Dashboard
+            </Button>
+          </StyledActions>
+        </StyledBody>
+      </StyledContent>
+    </StyledContainer>
   );
 };
 

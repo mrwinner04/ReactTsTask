@@ -8,11 +8,6 @@ import {
   spacing,
 } from "../tokens";
 
-/**
- *  Button Component styles
- */
-
-// Button variants used in the app
 export type ButtonSize = "sm" | "md" | "lg";
 export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 

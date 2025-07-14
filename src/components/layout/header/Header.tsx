@@ -1,20 +1,35 @@
 import React from "react";
-import { useAuth } from "../../../hooks/useAuth";
-import HeaderPresentation from "./HeaderPresentation";
+import { useHeader } from "./Header.logic";
+import {
+  StyledHeader,
+  StyledLogo,
+  HeaderActions,
+  StyledTextButton,
+} from "./Header.styles";
 
-/**
- * Header Component
- */
 const Header: React.FC = () => {
-  const { logout } = useAuth();
+  const { handleLogout } = useHeader();
 
-  const handleLogout = () => {
-    if (window.confirm("Are you sure you want to logout?")) {
-      logout();
-    }
-  };
-
-  return <HeaderPresentation onLogout={handleLogout} />;
+  return (
+    <StyledHeader>
+      <StyledLogo>
+        <a href="#" rel="noopener noreferrer">
+          YaraLogo
+        </a>
+      </StyledLogo>
+      <HeaderActions>
+        <StyledTextButton href="#" role="button">
+          Help
+        </StyledTextButton>
+        <StyledTextButton href="#" role="button">
+          Profile
+        </StyledTextButton>
+        <StyledTextButton href="#" role="button" onClick={handleLogout}>
+          Log Out
+        </StyledTextButton>
+      </HeaderActions>
+    </StyledHeader>
+  );
 };
 
 export default Header;

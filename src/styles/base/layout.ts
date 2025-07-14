@@ -1,17 +1,11 @@
 import styled from "styled-components";
 import { breakpoints, spacing } from "../tokens";
 
-/**
- * Essential Layout Components
- */
-
-// Base section wrapper - used in card sections
 export const BaseSection = styled.section`
   margin-bottom: ${spacing.lg};
   width: 100%;
 `;
 
-// Two-column layout utility - used in dashboard
 export const TwoColumnLayout = styled.div`
   display: flex;
   gap: ${spacing.lg};
@@ -27,7 +21,6 @@ export const TwoColumnLayout = styled.div`
   }
 `;
 
-// Empty state wrapper - card sections
 export const EmptyState = styled.div`
   text-align: center;
   padding: ${spacing.lg} ${spacing.md};
@@ -36,7 +29,6 @@ export const EmptyState = styled.div`
   border: 2px dashed #dee2e6;
 `;
 
-// Responsive container - used in dashboard
 export const ResponsiveContainer = styled.div<{
   $maxWidth?: "content" | "section";
   $padding?: keyof typeof spacing;
@@ -51,8 +43,6 @@ export const ResponsiveContainer = styled.div<{
     padding: 0 ${spacing.md};
   }
 `;
-
-// SIDEBAR COMPONENTS - used in Sidebar
 
 export const BaseSidebar = styled.aside<{ $isOpen: boolean }>`
   position: fixed;
@@ -220,8 +210,6 @@ export const CloseButton = styled.button`
     display: block;
   }
 `;
-
-// SECTION COMPONENTS - used in card sections
 
 export const SectionHeader = styled.div`
   display: flex;

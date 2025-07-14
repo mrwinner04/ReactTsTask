@@ -45,14 +45,11 @@ export class CardService {
     );
 
     if (!targetSection) {
-      // If section doesn't exist, start with 1
       return `card_${sectionId}_1`;
     }
 
-    // Extract numbers from existing card IDs in this section
     const existingNumbers = targetSection.cards
       .map((card) => {
-        // Extract number from pattern: card_{sectionId}_{number}
         const match = card.id.match(new RegExp(`^card_${sectionId}_(\\d+)$`));
         return match ? parseInt(match[1], 10) : 0;
       })
@@ -140,7 +137,6 @@ export class CardService {
       ),
     }));
   }
-
   /**
    * Delete a card from sections
    */
@@ -153,7 +149,6 @@ export class CardService {
       cards: section.cards.filter((card) => card.id !== cardId),
     }));
   }
-
   /**
    * Find a specific card by ID across all sections
    */

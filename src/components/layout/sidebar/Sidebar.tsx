@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useSidebar } from "./Sidebar.logic";
 import {
   BaseSidebar,
   MobileMenuButton,
@@ -11,30 +11,17 @@ import {
   NavIcon,
   NavLabel,
   CloseButton,
-} from "../../styles/exportDesign";
+} from "./Sidebar.styles";
 
 const Sidebar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const toggleSidebar = () => setIsOpen(!isOpen);
-  const closeSidebar = () => setIsOpen(false);
-
-  // Navigation handlers
-  const handleHomeClick = () => {
-    navigate("/dashboard");
-    closeSidebar();
-  };
-
-  const handleEventsClick = () => {
-    navigate("/sidebar/events");
-    closeSidebar();
-  };
-
-  const handleNewsClick = () => {
-    navigate("/sidebar/news");
-    closeSidebar();
-  };
+  const {
+    isOpen,
+    toggleSidebar,
+    closeSidebar,
+    handleHomeClick,
+    handleEventsClick,
+    handleNewsClick,
+  } = useSidebar();
 
   return (
     <>

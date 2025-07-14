@@ -7,15 +7,9 @@ import {
   animations,
 } from "../tokens";
 
-/**
- * Base Card Components
- */
-
-// Card layout variants
 export type CardLayout = "vertical" | "horizontal";
 export type CardSize = "compact" | "default" | "large";
 
-// Base card wrapper
 export const BaseCard = styled.article<{
   $layout?: CardLayout;
   $size?: CardSize;

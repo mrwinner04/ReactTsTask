@@ -1,30 +1,51 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
-import LoginPresentation from "./LoginPresentation";
+import { useLogin } from "./Login.logic";
+import { Text } from "../../components/atoms";
+import {
+  StyledLoginPage,
+  StyledLoginContainer,
+  StyledLoginHeader,
+  StyledLoginContent,
+  LoginDescription,
+  StyledLoginButton,
+} from "./Login.styles";
 
-/**
- * Login Component
- */
 const Login: React.FC = () => {
-  const { user, login, isLoading } = useAuth();
+  const { shouldRedirect, isLoading, handleLogin } = useLogin();
 
-  // Redirect
-  if (user) {
+  if (shouldRedirect) {
     return <Navigate to="/dashboard" replace />;
   }
 
-  // Handle login with credentials
-  const handleLogin = async () => {
-    const success = await login("demo@example.com", "password123");
+  return (
+    <StyledLoginPage>
+      <StyledLoginContainer>
+        <StyledLoginHeader>
+          <Text variant="h1" weight="semibold" size="xl">
+            YaraPlus Dashboard
+          </Text>
+          <Text variant="body" color="muted" size="md">
+            Demo Authentication
+          </Text>
+        </StyledLoginHeader>
 
-    if (!success) {
-      alert("Authentication failed. Please try again.");
-    }
-  };
+        <StyledLoginContent>
+          <LoginDescription variant="body" color="subtle" size="sm">
+            Click the button below to authenticate with demo credentials
+          </LoginDescription>
 
-  // Pass data and handlers to presentation
-  return <LoginPresentation isLoading={isLoading} onLogin={handleLogin} />;
+          <StyledLoginButton
+            variant="primary"
+            onClick={handleLogin}
+            disabled={isLoading}
+          >
+            {isLoading ? "Authenticating..." : "Login with Demo Account"}
+          </StyledLoginButton>
+        </StyledLoginContent>
+      </StyledLoginContainer>
+    </StyledLoginPage>
+  );
 };
 
 export default Login;

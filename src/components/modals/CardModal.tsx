@@ -1,7 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { useCards } from "../../hooks/useCards";
-import CardModalPresentation from "./CardModalPresentation";
+import React from "react";
+import { useCardModal } from "./CardModal.logic";
+import { Button, Input, Text } from "../atoms";
 import type { Card } from "../../types/Types";
+import {
+  ModalBackdrop,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  FormGroup,
+  FormTextarea,
+} from "../../styles/exportDesign";
+import { ModalTitle, ErrorText } from "./CardModal.styles";
 
 interface CardModalProps {
   isOpen: boolean;
@@ -10,125 +21,154 @@ interface CardModalProps {
   editCard?: Card | null;
 }
 
-/**
- * CardModal Component
- */
 const CardModal: React.FC<CardModalProps> = ({
   isOpen,
   onClose,
   sectionId,
   editCard = null,
 }) => {
-  const { addCard, updateCard } = useCards();
-  const isEditing = Boolean(editCard);
+  const {
+    isEditing,
+    formData,
+    errors,
+    isLoading,
+    handleInputChange,
+    handleSubmit,
+    handleModalClose,
+    handleBackdropClick,
+  } = useCardModal({ isOpen, onClose, sectionId, editCard });
 
-  // Form state management
-  const [formData, setFormData] = useState({
-    title: "",
-    subtitle: "",
-    description: "",
-    imageUrl: "/assets/soil.jpg",
-    ctaLabel: "",
-  });
+  if (!isOpen) return null;
 
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      setFormData({
-        title: editCard?.title || "",
-        subtitle: editCard?.subtitle || "",
-        description: editCard?.description || "",
-        imageUrl: editCard?.imageUrl || "/assets/soil.jpg",
-        ctaLabel: editCard?.ctaLabel || "",
-      });
-      setErrors({});
-    }
-  }, [isOpen, editCard]);
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
-    }
-  };
-
-  const validateForm = () => {
-    setErrors({});
-    return true;
-  };
-
-  // form submission
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      const cardData = {
-        title: formData.title?.trim() || "",
-        subtitle: formData.subtitle?.trim() || "",
-        description: formData.description?.trim() || "",
-        imageUrl: formData.imageUrl?.trim() || "",
-        ctaLabel: formData.ctaLabel?.trim() || "",
-      };
-
-      if (isEditing && editCard) {
-        updateCard(editCard.id, cardData);
-      } else {
-        addCard(sectionId, cardData);
-      }
-
-      onClose();
-    } catch (error) {
-      console.error("Error saving card:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  // modal close with form reset
-  const handleModalClose = () => {
-    setFormData({
-      title: "",
-      subtitle: "",
-      description: "",
-      imageUrl: "/assets/soil.jpg",
-      ctaLabel: "",
-    });
-    setErrors({});
-    onClose();
-  };
-
-  // backdrop click to close modal
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      handleModalClose();
-    }
-  };
-
-  // Pass all data and handlers to presentation component
   return (
-    <CardModalPresentation
-      isOpen={isOpen}
-      isEditing={isEditing}
-      isLoading={isLoading}
-      formData={formData}
-      errors={errors}
-      onSubmit={handleSubmit}
-      onInputChange={handleInputChange}
-      onClose={handleModalClose}
-      onBackdropClick={handleBackdropClick}
-    />
+    <ModalBackdrop onClick={handleBackdropClick}>
+      <ModalContent role="dialog" aria-labelledby="modal-title">
+        <ModalHeader>
+          <ModalTitle variant="h3" weight="semibold" size="lg">
+            {isEditing ? "Edit Card" : "Create New Card"}
+          </ModalTitle>
+          <ModalCloseButton onClick={handleModalClose} aria-label="Close modal">
+            ✕
+          </ModalCloseButton>
+        </ModalHeader>
+
+        <ModalBody onSubmit={handleSubmit}>
+          <FormGroup>
+            <Text variant="caption" weight="medium" size="sm">
+              Title (optional)
+            </Text>
+            <Input
+              name="title"
+              type="text"
+              value={formData.title}
+              onChange={handleInputChange}
+              placeholder="Enter card title (optional)"
+            />
+            {errors.title && (
+              <ErrorText variant="caption" size="xs">
+                {errors.title}
+              </ErrorText>
+            )}
+          </FormGroup>
+
+          <FormGroup>
+            <Text variant="caption" weight="medium" size="sm">
+              Subtitle (optional)
+            </Text>
+            <Input
+              name="subtitle"
+              type="text"
+              value={formData.subtitle}
+              onChange={handleInputChange}
+              placeholder="Enter card subtitle (optional)"
+            />
+            {errors.subtitle && (
+              <ErrorText variant="caption" size="xs">
+                {errors.subtitle}
+              </ErrorText>
+            )}
+          </FormGroup>
+
+          <FormGroup>
+            <Text variant="caption" weight="medium" size="sm">
+              Description (optional)
+            </Text>
+            <FormTextarea
+              name="description"
+              value={formData.description}
+              onChange={handleInputChange}
+              placeholder="Enter card description (optional)"
+              rows={4}
+            />
+            {errors.description && (
+              <ErrorText variant="caption" size="xs">
+                {errors.description}
+              </ErrorText>
+            )}
+          </FormGroup>
+
+          <FormGroup>
+            <Text variant="caption" weight="medium" size="sm">
+              Image URL (optional)
+            </Text>
+            <Input
+              name="imageUrl"
+              type="text"
+              value={formData.imageUrl}
+              onChange={handleInputChange}
+              placeholder="Enter image URL (optional) - Default: /assets/soil.jpg"
+            />
+            {errors.imageUrl && (
+              <ErrorText variant="caption" size="xs">
+                {errors.imageUrl}
+              </ErrorText>
+            )}
+          </FormGroup>
+
+          <FormGroup>
+            <Text variant="caption" weight="medium" size="sm">
+              CTA Button Label (optional)
+            </Text>
+            <Input
+              name="ctaLabel"
+              type="text"
+              value={formData.ctaLabel}
+              onChange={handleInputChange}
+              placeholder="e.g., Read More, Learn More (optional)"
+            />
+            {errors.ctaLabel && (
+              <ErrorText variant="caption" size="xs">
+                {errors.ctaLabel}
+              </ErrorText>
+            )}
+          </FormGroup>
+
+          <ModalFooter>
+            <Button
+              type="button"
+              variant="outline"
+              size="md"
+              onClick={handleModalClose}
+              disabled={isLoading}
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              variant="primary"
+              size="md"
+              disabled={isLoading}
+            >
+              {isLoading
+                ? "Saving..."
+                : isEditing
+                ? "Update Card"
+                : "Create Card"}
+            </Button>
+          </ModalFooter>
+        </ModalBody>
+      </ModalContent>
+    </ModalBackdrop>
   );
 };
 

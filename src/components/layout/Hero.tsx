@@ -1,12 +1,9 @@
 import React from "react";
 import { useAuth } from "../../hooks/useAuth";
+import { Text } from "../atoms";
 import styled from "styled-components";
 import { spacing } from "../../styles/tokens";
-import BackgroundImage from "../../assets/overviewBackground.jpg";
-
-/**
- * Hero Layout Component
- */
+import BackgroundImage from "/assets/overviewBackground.jpg";
 
 const StyledHero = styled.section`
   color: white;
@@ -22,11 +19,7 @@ const StyledHero = styled.section`
   }
 `;
 
-const StyledHeroTitle = styled.h1`
-  margin-bottom: ${spacing.xs};
-`;
-
-const StyledHeroDescription = styled.p`
+const HeroDescription = styled(Text)`
   max-width: 70%;
 `;
 
@@ -35,11 +28,13 @@ const Hero: React.FC = () => {
 
   return (
     <StyledHero>
-      <StyledHeroTitle>Welcome {user?.name || "User"}</StyledHeroTitle>
-      <StyledHeroDescription>
+      <Text variant="h1" color="white" weight="semibold" size="xl">
+        Welcome {user?.name || "User"}
+      </Text>
+      <HeroDescription variant="body" color="white" size="md">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, qui.
         Eveniet eum, facere ex fugiat deleniti.
-      </StyledHeroDescription>
+      </HeroDescription>
     </StyledHero>
   );
 };

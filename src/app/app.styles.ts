@@ -1,17 +1,7 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { spacing } from "../styles/tokens";
 
-interface AppPresentationProps {
-  children: React.ReactNode;
-}
-
-/**
- * App Presentation Component
- */
-
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   /* Reset and base styles */
   *,
   *::before,
@@ -34,14 +24,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const StyledApp = styled.div`
+export const StyledApp = styled.div`
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
 
-const StyledLoadingContainer = styled.div`
+export const StyledLoadingContainer = styled.div`
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -49,7 +39,7 @@ const StyledLoadingContainer = styled.div`
   background-color: #f8f9fa;
 `;
 
-const StyledLoadingSpinner = styled.div`
+export const StyledLoadingSpinner = styled.div`
   padding: ${spacing.md};
   font-size: 18px;
   color: #333;
@@ -76,23 +66,3 @@ const StyledLoadingSpinner = styled.div`
     }
   }
 `;
-
-// Loading component for protected routes
-export const LoadingComponent: React.FC = () => (
-  <StyledLoadingContainer>
-    <StyledLoadingSpinner>Loading...</StyledLoadingSpinner>
-  </StyledLoadingContainer>
-);
-
-const AppPresentation: React.FC<AppPresentationProps> = ({ children }) => {
-  return (
-    <>
-      <GlobalStyle />
-      <Router>
-        <StyledApp>{children}</StyledApp>
-      </Router>
-    </>
-  );
-};
-
-export default AppPresentation;

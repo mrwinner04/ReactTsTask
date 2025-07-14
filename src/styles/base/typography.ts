@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import { breakpoints, spacing, colors, typography } from "../tokens";
 
-/**
- * Essential Typography Components
- */
-
-// Base span for inline text - used in cards
 export const BaseSpan = styled.span<{
   $size?: keyof typeof typography.sizes;
   $weight?: keyof typeof typography.weights;
@@ -16,7 +11,6 @@ export const BaseSpan = styled.span<{
   color: ${(props) => props.$color || colors.text};
 `;
 
-// Section title component - card sections
 export const SectionTitle = styled.h2`
   margin: 0 0 ${spacing.sm} 0;
   font-size: ${typography.sizes.xxl};
@@ -28,7 +22,6 @@ export const SectionTitle = styled.h2`
   }
 `;
 
-// Section subtitle component - card sections
 export const SectionSubtitle = styled.h5`
   margin: 0 0 ${spacing.sm} 0;
   opacity: 0.5;
@@ -39,7 +32,6 @@ export const SectionSubtitle = styled.h5`
   color: ${colors.textMuted};
 `;
 
-// Section description component - card sections
 export const SectionDescription = styled.p`
   color: ${colors.textMuted};
   font-size: ${typography.sizes.md};

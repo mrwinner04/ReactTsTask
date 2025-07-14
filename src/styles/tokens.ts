@@ -1,16 +1,10 @@
 import { keyframes } from "styled-components";
 
-/**
- * Simplified Design Tokens
- */
-
-// Breakpoints
 export const breakpoints = {
   md: "768px",
   lg: "980px",
 } as const;
 
-// Spacing - Complete pixel-based spacing system
 export const spacing = {
   xs: "8px",
   sm: "12px",
@@ -19,7 +13,6 @@ export const spacing = {
   xl: "40px",
 } as const;
 
-// Color palette
 export const colors = {
   primary: "#007bff",
   primaryHover: "#0056b3",
@@ -31,7 +24,6 @@ export const colors = {
   white: "#ffffff",
 } as const;
 
-// Essential animations
 export const animations = {
   fadeIn: keyframes`
     from { opacity: 0; }
@@ -39,7 +31,6 @@ export const animations = {
   `,
 } as const;
 
-// Typography
 export const typography = {
   sizes: {
     xs: "12px",
@@ -58,14 +49,12 @@ export const typography = {
   },
 } as const;
 
-// Border radius
 export const borderRadius = {
   sm: "6px",
   md: "10px",
   lg: "12px",
 } as const;
 
-// Shadows
 export const shadows = {
   sm: "0 2px 4px rgba(0, 123, 255, 0.2)",
   md: "0 4px 8px rgba(0, 123, 255, 0.3)",

@@ -7,11 +7,6 @@ import {
   typography,
 } from "../tokens";
 
-/**
- * Essential Modal and Form Components
- */
-
-// Modal backdrop overlay
 export const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
@@ -26,7 +21,6 @@ export const ModalBackdrop = styled.div`
   padding: ${spacing.md};
 `;
 
-// Modal content container
 export const ModalContent = styled.div`
   background: ${colors.white};
   border-radius: ${borderRadius.lg};
@@ -43,7 +37,6 @@ export const ModalContent = styled.div`
   }
 `;
 
-// Modal header
 export const ModalHeader = styled.div`
   padding: ${spacing.lg};
   border-bottom: 1px solid ${colors.border};
@@ -52,7 +45,6 @@ export const ModalHeader = styled.div`
   align-items: center;
 `;
 
-// Modal title
 export const ModalTitle = styled.h2`
   margin: 0;
   font-size: ${typography.sizes.lg};
@@ -60,7 +52,6 @@ export const ModalTitle = styled.h2`
   color: ${colors.text};
 `;
 
-// Modal close button
 export const ModalCloseButton = styled.button`
   background: none;
   border: none;
@@ -82,12 +73,10 @@ export const ModalCloseButton = styled.button`
   }
 `;
 
-// Modal body (form)
 export const ModalBody = styled.form`
   padding: ${spacing.lg};
 `;
 
-// Modal footer
 export const ModalFooter = styled.div`
   padding: ${spacing.lg};
   border-top: 1px solid ${colors.border};
@@ -102,12 +91,10 @@ export const ModalFooter = styled.div`
   }
 `;
 
-// Form group wrapper
 export const FormGroup = styled.div`
   margin-bottom: ${spacing.lg};
 `;
 
-// Form label
 export const FormLabel = styled.label<{
   $required?: boolean;
 }>`
@@ -127,7 +114,6 @@ export const FormLabel = styled.label<{
   `}
 `;
 
-// Form input
 export const FormInput = styled.input<{
   $error?: boolean;
 }>`

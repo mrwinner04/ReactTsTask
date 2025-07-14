@@ -1,56 +1,131 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { useCards } from "../../hooks/useCards";
-import { useCardActions } from "../../hooks/useCardActions";
-import type { Card } from "../../types/Types";
-import SidebarPagePresentation from "./SidebarPagePresentation";
+import { useSidebarPage } from "./SidebarPage.logic";
+import { BaseButton, ResponsiveContainer } from "../../styles/exportDesign";
+import {
+  StyledSectionContainer,
+  StyledSectionHeader,
+  StyledSectionTitle,
+  StyledSectionSubtitle,
+  StyledCardsGrid,
+  StyledCard,
+  StyledCardImage,
+  StyledCardTitle,
+  StyledCardSubtitle,
+  StyledCardDescription,
+  StyledCardHeader,
+  StyledCardBody,
+  StyledCardCta,
+  StyledNoCards,
+} from "./SidebarPage.styles";
 
-/**
- * SidebarPage Component
- */
 const SidebarPage: React.FC = () => {
-  const { section } = useParams<{ section: string }>();
-  const { sections } = useCards();
-
-  // Use card actions hook with navigation
   const {
-    isModalOpen,
-    editingCard,
-    selectedSectionId,
+    sectionCards,
+    sectionTitle,
+    sectionName,
     handleEditCard,
-    handleCloseModal,
     handleDeleteCard,
     navigateToDashboard,
     navigateToCard,
-  } = useCardActions();
+  } = useSidebarPage();
 
-  // Find section based on URL parameter
-  const currentSection = sections.find(
-    (s) =>
-      s.name.toLowerCase() === section?.toLowerCase() ||
-      s.title.toLowerCase().includes(section?.toLowerCase() || "")
-  );
+  const handleBackToDashboard = () => {
+    navigateToDashboard();
+  };
 
-  const sectionCards: Card[] = currentSection?.cards || [];
-
-  const displayTitle = section
-    ? section.charAt(0).toUpperCase() + section.slice(1)
-    : currentSection?.title || "Section";
+  const handleCardClick = (cardId: string) => {
+    navigateToCard(cardId);
+  };
 
   return (
-    <SidebarPagePresentation
-      sectionCards={sectionCards}
-      sectionTitle={displayTitle}
-      sectionName={section || ""}
-      isModalOpen={isModalOpen}
-      editingCard={editingCard}
-      selectedSectionId={selectedSectionId}
-      onEditCard={handleEditCard}
-      onDeleteCard={handleDeleteCard}
-      onCloseModal={handleCloseModal}
-      onNavigateToDashboard={navigateToDashboard}
-      onNavigateToCard={navigateToCard}
-    />
+    <StyledSectionContainer>
+      <StyledSectionHeader>
+        <ResponsiveContainer>
+          <StyledSectionTitle>{sectionTitle}</StyledSectionTitle>
+          <StyledSectionSubtitle>
+            Browse all {sectionName.toLowerCase()}
+          </StyledSectionSubtitle>
+        </ResponsiveContainer>
+      </StyledSectionHeader>
+
+      <ResponsiveContainer>
+        {sectionCards.length > 0 ? (
+          <StyledCardsGrid>
+            {sectionCards.map((card) => (
+              <StyledCard
+                key={card.id}
+                onClick={() => handleCardClick(card.id)}
+              >
+                {card.imageUrl && (
+                  <StyledCardImage
+                    src={card.imageUrl}
+                    alt={card.title || "Card image"}
+                  />
+                )}
+
+                <StyledCardHeader>
+                  <StyledCardTitle>{card.title}</StyledCardTitle>
+                  {card.subtitle && (
+                    <StyledCardSubtitle>{card.subtitle}</StyledCardSubtitle>
+                  )}
+                </StyledCardHeader>
+
+                <StyledCardBody>
+                  <StyledCardDescription>
+                    {card.description}
+                  </StyledCardDescription>
+                </StyledCardBody>
+
+                <StyledCardCta>
+                  {card.ctaLabel && (
+                    <BaseButton $variant="primary" $size="sm">
+                      {card.ctaLabel}
+                    </BaseButton>
+                  )}
+                  <BaseButton
+                    $variant="ghost"
+                    $size="sm"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleEditCard(card);
+                    }}
+                    title="Edit card"
+                  >
+                    ✏️
+                  </BaseButton>
+                  <BaseButton
+                    $variant="ghost"
+                    $size="sm"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDeleteCard(card.id, card.title);
+                    }}
+                    title="Delete card"
+                  >
+                    🗑️
+                  </BaseButton>
+                </StyledCardCta>
+              </StyledCard>
+            ))}
+          </StyledCardsGrid>
+        ) : (
+          <StyledNoCards>
+            <h3>No {sectionTitle} Available</h3>
+            <p>
+              There are currently no {sectionName.toLowerCase()} to display.
+            </p>
+          </StyledNoCards>
+        )}
+
+        <BaseButton
+          $variant="outline"
+          $size="md"
+          onClick={handleBackToDashboard}
+        >
+          ← Back to Dashboard
+        </BaseButton>
+      </ResponsiveContainer>
+    </StyledSectionContainer>
   );
 };
 
