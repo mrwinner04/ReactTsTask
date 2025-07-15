@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { useCards } from "../../hooks/useCards";
 import type { Card } from "../../types/Types";
 
+// Valid layout options for individual cards
+type CardLayoutOption = "vertical" | "horizontal";
+
 interface CardModalLogicProps {
   isOpen: boolean;
   onClose: () => void;
@@ -24,6 +27,7 @@ export const useCardModal = ({
     description: "",
     imageUrl: "/assets/soil.jpg",
     ctaLabel: "",
+    layout: "vertical" as CardLayoutOption, // Use specific type for layout options
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -37,6 +41,9 @@ export const useCardModal = ({
         description: editCard?.description || "",
         imageUrl: editCard?.imageUrl || "/assets/soil.jpg",
         ctaLabel: editCard?.ctaLabel || "",
+        layout: (editCard?.layout === "horizontal"
+          ? "horizontal"
+          : "vertical") as CardLayoutOption, // Map layout safely
       });
       setErrors({});
     }
@@ -74,6 +81,7 @@ export const useCardModal = ({
         description: formData.description?.trim() || "",
         imageUrl: formData.imageUrl?.trim() || "",
         ctaLabel: formData.ctaLabel?.trim() || "",
+        layout: formData.layout, // Include layout in card data
       };
 
       if (isEditing && editCard) {
@@ -97,6 +105,7 @@ export const useCardModal = ({
       description: "",
       imageUrl: "/assets/soil.jpg",
       ctaLabel: "",
+      layout: "vertical" as CardLayoutOption, // Reset to default layout option
     });
     setErrors({});
     onClose();

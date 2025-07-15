@@ -12,6 +12,7 @@ export interface Card {
   imageUrl?: string;
   ctaLabel?: string;
   sectionId: string;
+  layout?: CardLayout;
 }
 
 export interface CardFormData {
@@ -20,6 +21,7 @@ export interface CardFormData {
   description?: string;
   imageUrl?: string;
   ctaLabel?: string;
+  layout?: CardLayout;
 }
 
 export type SectionLayout = "default" | "stack" | "full-width" | "two-column";

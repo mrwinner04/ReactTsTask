@@ -19,34 +19,22 @@ export const CardsProvider: React.FC<CardsProviderProps> = ({ children }) => {
     CardService.getInitialSectionsJson()
   );
 
-  /**
-   * Add
-   */
   const addCard = useCallback((sectionId: string, cardData: CardFormData) => {
     setSections((prev) =>
       CardService.addCardToSection(prev, sectionId, cardData)
     );
   }, []);
 
-  /**
-   * Update
-   */
   const updateCard = useCallback((cardId: string, cardData: CardFormData) => {
     setSections((prev) =>
       CardService.updateCardInSections(prev, cardId, cardData)
     );
   }, []);
 
-  /**
-   * Delete
-   */
   const deleteCard = useCallback((cardId: string) => {
     setSections((prev) => CardService.deleteCardFromSections(prev, cardId));
   }, []);
 
-  /**
-   * Get card by ID
-   */
   const getCardById = useCallback(
     (cardId: string): Card | undefined => {
       return CardService.findCardById(sections, cardId);

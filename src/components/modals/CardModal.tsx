@@ -143,6 +143,59 @@ const CardModal: React.FC<CardModalProps> = ({
             )}
           </FormGroup>
 
+          <FormGroup>
+            <Text variant="caption" weight="medium" size="sm">
+              Card Layout
+            </Text>
+            <div style={{ display: "flex", gap: "16px", marginTop: "8px" }}>
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  cursor: "pointer",
+                }}
+              >
+                <input
+                  type="radio"
+                  name="layout"
+                  value="vertical"
+                  checked={formData.layout === "vertical"}
+                  onChange={handleInputChange}
+                  style={{ marginRight: "4px" }}
+                />
+                <Text variant="body" size="sm">
+                  Vertical
+                </Text>
+              </label>
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  cursor: "pointer",
+                }}
+              >
+                <input
+                  type="radio"
+                  name="layout"
+                  value="horizontal"
+                  checked={formData.layout === "horizontal"}
+                  onChange={handleInputChange}
+                  style={{ marginRight: "4px" }}
+                />
+                <Text variant="body" size="sm">
+                  Horizontal
+                </Text>
+              </label>
+            </div>
+            {errors.layout && (
+              <ErrorText variant="caption" size="xs">
+                {errors.layout}
+              </ErrorText>
+            )}
+          </FormGroup>
+
           <ModalFooter>
             <Button
               type="button"

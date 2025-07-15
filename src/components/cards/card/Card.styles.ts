@@ -7,10 +7,26 @@ import {
   breakpoints,
 } from "../../../styles/exportDesign";
 
-export const CardWrapper = styled(BaseCard)`
+export const CardWrapper = styled(BaseCard)<{
+  $layout?: "vertical" | "horizontal";
+  $size?: "compact" | "default" | "large";
+}>`
   display: flex;
   flex-direction: column;
   padding: 0;
+
+  /* Apply different max-width and layout adjustments based on layout */
+  ${(props) =>
+    props.$layout === "horizontal" &&
+    `
+    max-width: 600px; /* Limit width for horizontal cards */
+  `}
+
+  ${(props) =>
+    props.$size === "compact" &&
+    `
+    max-width: 300px; /* Smaller width for compact cards */
+  `}
 `;
 
 export const CardTopSection = styled.div<{
@@ -21,17 +37,41 @@ export const CardTopSection = styled.div<{
     props.$layout === "horizontal" ? "row" : "column"};
   flex: 1;
 
+  /* Better alignment for horizontal layout */
+  ${(props) =>
+    props.$layout === "horizontal" &&
+    `
+    align-items: stretch;
+    min-height: 120px;
+    padding: ${spacing.sm};
+  `}
+
   @media (max-width: ${breakpoints.md}) {
     flex-direction: column;
+    ${(props) =>
+      props.$layout === "horizontal" &&
+      `
+      padding: 0;
+    `}
   }
 `;
 
-export const CardTextContent = styled.div`
+export const CardTextContent = styled.div<{
+  $layout?: "vertical" | "horizontal";
+}>`
   flex: 1;
-  padding: ${spacing.sm};
+  padding: ${(props) => (props.$layout === "horizontal" ? "0" : spacing.sm)};
   display: flex;
   flex-direction: column;
   gap: ${spacing.sm};
+
+  /* Better content distribution for horizontal layout */
+  ${(props) =>
+    props.$layout === "horizontal" &&
+    `
+    justify-content: center;
+    min-height: 120px;
+  `}
 `;
 
 export const CardTitle = styled(BaseSpan)`
@@ -89,8 +129,9 @@ export const BaseCardImage = styled.figure<{
   $height?: string;
 }>`
   margin: 0;
-  height: ${(props) => props.$height || "150px"};
-  width: ${(props) => (props.$layout === "horizontal" ? "200px" : "100%")};
+  height: ${(props) =>
+    props.$layout === "horizontal" ? "120px" : props.$height || "150px"};
+  width: ${(props) => (props.$layout === "horizontal" ? "180px" : "100%")};
   flex-shrink: 0;
   overflow: hidden;
   background-color: #f8f9fa;
@@ -101,9 +142,23 @@ export const BaseCardImage = styled.figure<{
     object-fit: cover;
   }
 
+  /* Horizontal layout specific styles */
+  ${(props) =>
+    props.$layout === "horizontal" &&
+    `
+    border-radius: 8px;
+    margin-right: 16px;
+  `}
+
   /* Mobile adjustments for horizontal cards */
   @media (max-width: ${breakpoints.md}) {
     width: 100% !important;
     height: 150px !important;
+    ${(props) =>
+      props.$layout === "horizontal" &&
+      `
+      margin-right: 0;
+      margin-bottom: 12px;
+    `}
   }
 `;

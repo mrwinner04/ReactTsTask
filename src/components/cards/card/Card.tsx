@@ -34,11 +34,9 @@ const CardItem: React.FC<CardItemProps> = ({ card, className }) => {
 
   const hasImage = card.imageUrl && card.imageUrl.trim() !== "";
 
-  const layout: "vertical" | "horizontal" = className?.includes(
-    "card--horizontal"
-  )
-    ? "horizontal"
-    : "vertical";
+  // Use layout from card data, map compact to vertical, fallback to vertical if not specified
+  const layout: "vertical" | "horizontal" =
+    card.layout === "horizontal" ? "horizontal" : "vertical";
 
   const size: "compact" | "default" | "large" = !hasImage
     ? "compact"
@@ -57,7 +55,7 @@ const CardItem: React.FC<CardItemProps> = ({ card, className }) => {
           </BaseCardImage>
         )}
 
-        <CardTextContent>
+        <CardTextContent $layout={layout}>
           <CardTitle>{card.title}</CardTitle>
           {card.subtitle && <CardSubtitle>{card.subtitle}</CardSubtitle>}
           <CardDescription>{card.description}</CardDescription>

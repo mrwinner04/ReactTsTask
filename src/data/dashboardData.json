@@ -16,7 +16,8 @@
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "solutions"
+          "sectionId": "solutions",
+          "layout": "vertical"
         },
         {
           "id": "card_solutions_2",
@@ -25,7 +26,8 @@
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "solutions"
+          "sectionId": "solutions",
+          "layout": "horizontal"
         },
         {
           "id": "card_solutions_3",
@@ -34,7 +36,8 @@
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "solutions"
+          "sectionId": "solutions",
+          "layout": "vertical"
         },
         {
           "id": "card_solutions_4",
@@ -43,7 +46,8 @@
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "solutions"
+          "sectionId": "solutions",
+          "layout": "horizontal"
         },
         {
           "id": "card_solutions_5",
@@ -52,7 +56,8 @@
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/soil.jpg",
           "ctaLabel": "Learn More",
-          "sectionId": "solutions"
+          "sectionId": "solutions",
+          "layout": "vertical"
         }
       ]
     },
@@ -72,7 +77,8 @@
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/fertilizer_list.jpeg",
           "ctaLabel": "Learn More",
-          "sectionId": "featured"
+          "sectionId": "featured",
+          "layout": "horizontal"
         },
         {
           "id": "card_featured_2",
@@ -81,7 +87,8 @@
           "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aliquam hic dolore cupiditate repellat quo! Reiciendis, reprehenderit vel.",
           "imageUrl": "/assets/fertilizer_list.jpeg",
           "ctaLabel": "Read More",
-          "sectionId": "featured"
+          "sectionId": "featured",
+          "layout": "vertical"
         }
       ]
     },
